@@ -11,10 +11,10 @@
 char printmenu(void)
 {
 	printf_s("\n");
-	printf_s("**********************************************\n");
-	printf_s("**               Welcome to                 **\n");
-	printf_s("**           Cafe Chat Noir Menu            **\n");
-	printf_s("**********************************************\n");
+	printf_s("**************************************\n");
+	printf_s("**           Welcome to             **\n");
+	printf_s("**    Cafe Chat Noir Menu Manager   **\n");
+	printf_s("**************************************\n");
 
 	printf("\nTo choose a function, enter its label: \n");
 	printf("a) Search Recipes\n");

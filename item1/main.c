@@ -1,12 +1,55 @@
-// PROG71985 - F22 
-// GROUP PROJECT - DEC 2022
-// 
-// Naryan Sambhi, Katrina Lurkic, Muhammad Asim
-// 
-// Goal: 
-// Our goal is to a recipe cooking manager for a local cafe
-// 
-//
+// --------------------------------------------------------------------------------------
+// PROG71985 - F22																	   //
+// GROUP PROJECT - DEC 2022															   //
+//																					   //
+// Naryan Sambhi, Katrina Lukic, Muhammad Asim										   //
+//																					   //
+// Goal:																			   //
+// Our goal is to a recipe cooking manager for a local cafe							   //
+//																					   //
+// Our recipe manager is aimed at assisting managment and chefs with the storing	   //
+// and creation of recipes for their nmenu											   //
+//																					   //
+// --------------------------------------------------------------------------------------
+//																					   //
+//REQURIEMENTS																		   //
+//																				       //
+// PRIORITY FEATURES:																   //
+//  -Add recipes																	   //
+//  -delete existing recipe															   //
+//  -update existing recipe															   //
+//  -display single recipe															   //
+//  -display range of recipes														   //
+//	-display all reciples															   //
+//																					   //
+//  -save to disc and pull data when opening										   //
+//																					   //
+//																					   //
+// NON-PRIORITY FEATURES															   //
+//	-user friendly UI																   //
+//	-search by alphabetical															   //
+//																					   //
+// --------------------------------------------------------------------------------------
+//																					   //
+// For this we must include:														   //
+//	-A DATA file for our menu contents												   //
+//	-Nested structs to hold the data of our recipes									   //
+//																					   //
+// A recipe will consists:															   //
+//	-Name of item																	   //
+//		-string																		   //
+//																					   //
+//  -Ingredients																	   //
+//		-array of strings															   //
+//																					   //
+//	-How to cook																	   //
+//		-cook time INT																   //
+//		-prep time INT																   //
+//		-ready in time INT															   //
+//		-temprature INT																   //
+//		-cooking method ENUM														   //
+//																					   //
+// --------------------------------------------------------------------------------------
 
 #include <stdio.h>
 #include <stdbool.h>
