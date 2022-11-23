@@ -10,7 +10,7 @@
 // --------------------------------------------------------------------------------------
 //  Ingredients Nested into recipe Struct header file
 //
-// array of Ingredients
+// this struct is to store the array of Ingredients
 
 typedef struct ingredients {
 	char name[MAXLEN];

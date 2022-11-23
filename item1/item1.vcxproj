@@ -127,8 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="addRecipe.c" />
+    <ClCompile Include="deleteRecipe.c" />
+    <ClCompile Include="displayAllRecipes.c" />
+    <ClCompile Include="displaySingleRecipe.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="menu.c" />
+    <ClCompile Include="recipeRange.c" />
+    <ClCompile Include="searchRecipe.c" />
+    <ClCompile Include="updateRecipe.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HowToCook.h" />

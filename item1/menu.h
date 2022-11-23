@@ -9,3 +9,10 @@
 //  header to menu function file
 
 char printmenu(void);
+void searchRecipe(void);
+void displayAllRecipes(void);
+void recipeRange(void);
+void displaySingleRecipe(void);
+void addRecipe(void);
+void deleteRecipe(void);
+void updateRecipe(void);

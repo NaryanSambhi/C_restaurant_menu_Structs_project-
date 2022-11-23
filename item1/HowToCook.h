@@ -15,13 +15,12 @@
 //		-cooking method ENUM		
 
 
-///the second typedef struct is to store the student ids and has the struct studentname nested inside of it 
-
+///the typedef struct is to store the cooking values 
 
 typedef struct cook {
 	int preptime;
 	int cooktime;
 	int readytime;
 	int temp;
-	enum cookingmethod {bake, boil, grill, microwave, roasting, frying}; //add more here 
+	enum cookingmethod {bake, boil, grill, microwave, roasting, frying, cooking}; //add more here 
 }COOK;

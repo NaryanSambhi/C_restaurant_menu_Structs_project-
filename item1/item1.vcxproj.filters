@@ -21,6 +21,27 @@
     <ClCompile Include="menu.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="searchRecipe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="displayAllRecipes.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="recipeRange.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="displaySingleRecipe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="addRecipe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="deleteRecipe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="updateRecipe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="menu.h">

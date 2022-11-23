@@ -1,19 +1,13 @@
-#pragma once
-
+#include <stdio.h>
 // --------------------------------------------------------------------------------------
 // PROG71985 - F22																	   //
 // GROUP PROJECT - DEC 2022															   //
 //																					   //
 // Naryan Sambhi, Katrina Lukic, Muhammad Asim										   //
 // --------------------------------------------------------------------------------------
-//  Recipe Struct header file
+//  Function to add recipies 
 
-#include "ingredients.h"
-#include "HowToCook.h"
-
-// typedef struct to store the recipes, and the otehr two structs Ingredients, and cooking 
-typedef struct recipe {
-	char recipeName;
-	INGREDIENTS ingredients;
-	COOK cook;
-}RECIPE;
+void addRecipe(void) {
+	printf("\nadd recipes function here\n\n\n");
+	return 0;
+}
