@@ -60,8 +60,10 @@ int main(void)
 {
 //create or open file of recipes
 
+//search for file
+	//if no file create file
 
-
+	//if file open or load file contents
 
 //menu 
 	bool continueProgram = true;
@@ -100,18 +102,21 @@ int main(void)
 			//update existing recipe 
 			break;
 		case 'h':
-			continueProgram = false;
+			continueProgram = false; //breaks loop
 			break;
 		default:
-			printf("\ninvalid entry\n\n\n");
+			printf("\ninvalid entry\n\n\n"); 
 			break;
 		}
 	}
-	//exit messages to confirm good exit 
-
+	
 	//save to file 
 
 	//close file
 
 	//free memory 
+
+	//exit
+		//exit messages to confirm good exit 
+	printf_s("\nThank you for using our menu manager\n");
 }

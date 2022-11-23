@@ -6,6 +6,6 @@
 //																					   //
 // Naryan Sambhi, Katrina Lukic, Muhammad Asim										   //
 // --------------------------------------------------------------------------------------
-//  header to menu function file
-
-char printmenu(void);
+//  Ingredients Nested into recipe Struct header file
+//
+// array of Ingredients

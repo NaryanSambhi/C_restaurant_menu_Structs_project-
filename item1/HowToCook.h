@@ -6,6 +6,11 @@
 //																					   //
 // Naryan Sambhi, Katrina Lukic, Muhammad Asim										   //
 // --------------------------------------------------------------------------------------
-//  header to menu function file
-
-char printmenu(void);
+//  How to cook Nested into recipe Struct header file
+//	
+// How to cook																	   
+//		-cook time INT																   
+//		-prep time INT																   
+//		-ready in time INT															   
+//		-temprature INT																   
+//		-cooking method ENUM		
