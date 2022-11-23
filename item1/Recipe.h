@@ -7,3 +7,12 @@
 // Naryan Sambhi, Katrina Lukic, Muhammad Asim										   //
 // --------------------------------------------------------------------------------------
 //  Recipe Struct header file
+
+#include "ingredients.h"
+#include "HowToCook.h"
+
+typedef struct recipe {
+	char recipeName;
+	INGREDIENTS ingredients;
+	COOK cook;
+}RECIPE;
