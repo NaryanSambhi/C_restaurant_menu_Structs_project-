@@ -1,3 +1,6 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+
 // --------------------------------------------------------------------------------------
 // PROG71985 - F22																	   //
 // GROUP PROJECT - DEC 2022															   //
@@ -28,6 +31,7 @@
 // NON-PRIORITY FEATURES															   //
 //	-user friendly UI																   //
 //	-search by alphabetical															   //
+//  -search by meal type (breakfast, etc)											   //
 //																					   //
 // --------------------------------------------------------------------------------------
 //																					   //
@@ -38,6 +42,7 @@
 // A recipe will consists:															   //
 //	-Name of item																	   //
 //		-string																		   //
+//  -Meal (breakfast, lunch, dinner)												   //
 //																					   //
 //  -Ingredients																	   //
 //		-array of strings															   //
@@ -49,69 +54,45 @@
 //		-temprature INT																   //
 //		-cooking method ENUM														   //
 //--------------------------------------------------------------------------------------	
-// Items for the menu
-// 
-// The menu will have multiple options including breakfast, lunch, and Dinner dishes
-// Also will have three drinks 
-// 
-// There will be three Breakfast Options
-// 
-// 1. Pancakes - Ingredients are flour, baking powder, sugar, salt, milk, butter, egg 
-// How to cook is: 15 mins cook time, 5 mins prep time, ready in 20 mins, temperature is room temperature, cooking method is cooking 
-// 
-// 2. Spinach Omlette - Ingredients are eggs, spinach, cheese, onion powder, salt, pepper
-// How to cook is: 15 mins cook time, 5 mins prep time, ready in 20 mins, temperature is room temperature, cooking method is cooking 
-// 
-// 3. Waffles - Ingredients are flour, salt, baking powder, sugar, eggs, milk, butter, vanilla 
-// How to cook is: 10 mins cook time, 10 mins prep time, ready in 20 mins, temperature is room temperature, cookig method is cooking
-// 
-// Three Lunch Options 
-// 
-// 1. Chicken Salad - Ingredients are chicken, mayonaise, celery, almonds, basil, grapes
-// How to cook is: 5 mins cook time, 5 mins prep time, ready in 10 mins, temperature is room temperature, cooking method is cooking
-// 
-// 2. Butternut squash Soup - Ingredients are butternut squash, yellow onions, garlic, sage, rosemary, ginger, olive oil, vegatable broth, black pepper
-// How to cook is: 35 mins cook time, 10 mins prep time, ready in 45 mins, temperature is room tempeature, cooking method is cooking 
-// 
-// 3. Sandwiches - Ingredients are bread, mayonaise, chicken, lettuce, tomato
-// How to cook is: 0 mins cook time, 5 mins prep time, ready in 5 mins, temperature is room temperature, cooking method is N/a 
-// 
-// Three Dinner options 
-// 
-// 1. Pasta (Spaghetti and Meatballs)- Ingredients are spaghetti, beef, bread crumbs, parsley, parmesian, egg, salt, garlic, olive oil, onion, black pepper, tomatoes
-// How to cook is:40 mins cook time, 20 mins prep time, ready in 60 mins, temperature is 400F, cooking method is bake
-// 
-// 2. Roasted Chicken - Ingredients are chicken, salt, back pepper, onion powder, butter, celery
-// How to cook is: 75 mins cook time, 15 mins prep time, ready in 90 mins, tempearture is 400F,cooking method is bake 
-// 
-// 3. Burger- Ingredients are egg, salt, black pepper, ground beef, bread crumbs, lettuce, tomaoto, ketchup, mustard, onions 
-// How to cook is:15 mins cook time, 5 mins prep time, ready in 20 mins, tempeature is 410F, cooking method is grill 
-// 	
-// Three Drink Options
-// 
-// 1. Coffee - Ingredients are coffee beans, water, sugar, milk
-// How to cook is: 2 mins cook time, 2 mins prep time, ready in 4 mins, temperature is low oven, cooking method is cooking
-// 
-// 2. Tea - Ingredients are tea leavesm water, sugar, milk 
-// How to cook is: 2 mins cook time, 2 mins prep time, ready in 4 mins, tempeature is low oven, cooking mehtod is cooking 
-// 
-// 3. Orange Juice - Ingredients are oranges, water, sugar 
-// How to cook is: 2 mins cook time, 2 mins prep time, ready in 4 mins, temperature is room temperature, cooking method is cooking 
-// --------------------------------------------------------------------------------------
+
+//18 slots
+//6 breakfast
+//6 lunch
+//6 dinner
+
+// three arrays or one array of 18?
 
 #include <stdio.h>
 #include <stdbool.h>
-#include "menu.h"
+#include <stdlib.h>
 
+
+#include "menu.h"
+#include "Recipe.h"
+#include "ingredients.h"
+#include "HowToCook.h"
 
 int main(void)
 {
-//create or open file of recipes
+	struct RECIPE;
 
+	FILE* fp;
+	size_t size = sizeof(struct recipe);
+
+//create array of recipes here
+
+	//for loop, create 'slots'
+	
 //search for file
-	//if no file create file
 
-	//if file open or load file contents
+//create or open file of recipes
+	if ((fp = fopen ("recipebook.dat", "rb")) == NULL);
+	{
+		//if no data, create data
+	}
+	//else
+		//fread();
+		//fclose(fp);
 
 //menu 
 	bool continueProgram = true;
@@ -121,36 +102,22 @@ int main(void)
 
 		switch (choice)
 		{
-		case 'a':
-			searchRecipe();
-			//search recipes function
+		case 'a': searchRecipe();
 			break;
-		case 'b':
-			displayAllRecipes();
-			//display all recipes functions
+		case 'b': displayAllRecipes();
 			break;
-		case 'c':
-			recipeRange();
-			//range of recipes
+		case 'c': recipeRange();
 			break;
-		case 'd':
-			displaySingleRecipe();
-			//display single recipe
+		case 'd': displaySingleRecipe();
 			break;
-		case 'e':
-			addRecipe();
-			//add reciple
+		case 'e': addRecipe();
 			break;
-		case 'f':
-			deleteRecipe();
-			//delete recipe
+		case 'f': deleteRecipe();
 			break;
-		case 'g':
-			updateRecipe();
-			//update existing recipe 
+		case 'g': updateRecipe();
 			break;
 		case 'h':
-			continueProgram = false; //breaks loop
+			continueProgram = false; 
 			break;
 		default:
 			printf("\ninvalid entry\n\n\n"); 
@@ -159,12 +126,17 @@ int main(void)
 	}
 	
 	//save to file function here 
+	if ((fp = fopen("recipebook.dat", "wb")) == NULL)
+		printf("Can't save data to file");
+	else
+	{
+		//printf("\n\ntest\n\n");
+		
+		//save to file
+		// fwrite();
+		// fclose(fp);
+	}
 
-	//close file function here 
-
-	//free memory function here 
-
-	//exit
-		//exit messages to confirm good exit 
-	printf_s("\nThank you very much for using our menu manager\n");
+	//exit messages to confirm good exit 
+	printf("\nThank you very much for using our menu manager\n");
 }

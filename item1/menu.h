@@ -9,6 +9,8 @@
 //  header to menu function file
 
 char printmenu(void);
+
+//all need to be updated and changes to correct files
 void searchRecipe(void);
 void displayAllRecipes(void);
 void recipeRange(void);

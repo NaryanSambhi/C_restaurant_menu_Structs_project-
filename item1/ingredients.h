@@ -13,6 +13,6 @@
 // this struct is to store the array of Ingredients
 
 typedef struct ingredients {
-	char name[MAXLEN];
+	char* name[MAXLEN];
 	int num;
 }INGREDIENTS;

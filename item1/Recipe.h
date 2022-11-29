@@ -13,7 +13,9 @@
 
 // typedef struct to store the recipes, and the otehr two structs Ingredients, and cooking 
 typedef struct recipe {
-	char recipeName;
+	char* recipeName;
 	INGREDIENTS ingredients;
 	COOK cook;
+
+	enum MEAL {Breakfast, Lunch, Dinner} meal; 
 }RECIPE;

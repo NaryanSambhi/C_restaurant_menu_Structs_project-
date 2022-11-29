@@ -22,5 +22,5 @@ typedef struct cook {
 	int cooktime;
 	int readytime;
 	int temp;
-	enum cookingmethod {bake, boil, grill, microwave, roasting, frying, cooking}; //add more here 
+	enum COOKINGMETHOD {bake, grill, microwave, frying} cookingmethod; //add more here 
 }COOK;
