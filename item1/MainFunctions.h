@@ -11,7 +11,19 @@
 // --------------------------------------------------------------------------------------
 
 
+
+
+
+
 //MAIN
+
+bool NoRecipes(RECIPE arr[], int num);
+
+bool FullRecpies(RECIPE arr[], int num);
+
+void printRecipeSimple(RECIPE arr[], int num);
+
+
 
 void searchRecipe(RECIPE arr[], int num);
 

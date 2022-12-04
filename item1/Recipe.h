@@ -17,6 +17,8 @@
 
 // typedef struct to store the recipes, and the otehr two structs Ingredients, and cooking 
 
+#define MAX 10
+
 //how to cook
 typedef struct cook {
 	int preptime;
@@ -36,7 +38,7 @@ typedef struct ingredients {
 typedef struct recipe {
 
 	int id; //numer of item in list of slots 0-5
-	char recipeName;
+	char recipeName[MAX];
 	int price; 
 	bool status; //acts as a flag to when slot is written in or not
 
