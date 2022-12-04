@@ -15,45 +15,36 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c">
+    <ClCompile Include="Breakfast.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="menu.c">
+    <ClCompile Include="generalFunctions.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="searchRecipe.c">
+    <ClCompile Include="MainFunctions.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="displayAllRecipes.c">
+    <ClCompile Include="source.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="recipeRange.c">
+    <ClCompile Include="Lunch.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="displaySingleRecipe.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="addRecipe.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="deleteRecipe.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="updateRecipe.c">
+    <ClCompile Include="Dinner.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="menu.h">
+    <ClInclude Include="generalFunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Recipe.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HowToCook.h">
+    <ClInclude Include="Meals.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ingredients.h">
+    <ClInclude Include="MainFunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
