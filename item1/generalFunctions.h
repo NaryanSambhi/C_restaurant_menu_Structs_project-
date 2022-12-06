@@ -1,4 +1,5 @@
 #pragma once
+#include "Recipe.h"
 
 // --------------------------------------------------------------------------------------
 // PROG71985 - F22																	   //
@@ -20,10 +21,19 @@ char printmenuLunch(void);
 
 char printmenuDinner(void);
 
-
-
-////////// OTHER //////////
-
 char printmenuMain(void);
+
+
+////////// MAIN SUPPORTING FUNCTIONS //////////
+
+//other 
+void listTaken(RECIPE arr[], int num);
+
+//bools
+bool NoRecipes(RECIPE arr[], int num);
+bool FullRecpies(RECIPE arr[], int num);
+
+
+////////// SAFE GETS //////////
 
 int NumOnly(int num);

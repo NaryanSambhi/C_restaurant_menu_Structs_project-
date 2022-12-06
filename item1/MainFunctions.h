@@ -1,4 +1,5 @@
 #pragma once
+#include "Recipe.h"
 
 // --------------------------------------------------------------------------------------
 // PROG71985 - F22																	   //
@@ -11,38 +12,17 @@
 // --------------------------------------------------------------------------------------
 
 
-
-
-
-
 //MAIN
+void searchRecipe(RECIPE arr[], int num); 
 
-//other 
-void listTaken(RECIPE arr[], int num); //x
+void displayAllRecipes(RECIPE arr[], int num); 
 
+void recipeRange(RECIPE arr[], int num); //unimplemented
 
-//bools
-bool NoRecipes(RECIPE arr[], int num); //x
-bool FullRecpies(RECIPE arr[], int num); //x
+void displaySingleRecipe(RECIPE arr[], int num); 
 
-//prints
-void printRecipeSimple(RECIPE arr[], int num); //x
-void printRecipeHowTo(RECIPE arr[], int num); //x
-void printRecipeIngredients(RECIPE arr[], int num); 
+void addRecipe(RECIPE arr[], int num); //unimplemented
 
+void deleteRecipe(RECIPE arr[], int num); 
 
-
-//main
-void searchRecipe(RECIPE arr[], int num); //x
-
-void displayAllRecipes(RECIPE arr[], int num); //x
-
-void recipeRange(RECIPE arr[], int num);
-
-void displaySingleRecipe(RECIPE arr[], int num); //x
-
-void addRecipe(RECIPE arr[], int num);
-
-void deleteRecipe(RECIPE arr[], int num); //x
-
-void updateRecipe(RECIPE arr[], int num);
+void updateRecipe(RECIPE arr[], int num); //unimplemented

@@ -130,14 +130,17 @@
   <ItemGroup>
     <ClCompile Include="Breakfast.c" />
     <ClCompile Include="Dinner.c" />
+    <ClCompile Include="GetRecipeFromUser.c" />
     <ClCompile Include="Lunch.c" />
     <ClCompile Include="MainFunctions.c" />
     <ClCompile Include="generalFunctions.c" />
+    <ClCompile Include="printFunctions.c" />
     <ClCompile Include="source.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainFunctions.h" />
     <ClInclude Include="Meals.h" />
+    <ClInclude Include="printFunctions.h" />
     <ClInclude Include="Recipe.h" />
     <ClInclude Include="generalFunctions.h" />
   </ItemGroup>

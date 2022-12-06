@@ -11,13 +11,12 @@
 // --------------------------------------------------------------------------------------
 
 
-#define MAXLEN     25
 
 #include <stdbool.h>
 
 // typedef struct to store the recipes, and the otehr two structs Ingredients, and cooking 
 
-#define MAX 10
+#define MAX 20
 
 //how to cook
 typedef struct cook {
@@ -30,7 +29,7 @@ typedef struct cook {
 
 //ingredients
 typedef struct ingredients {
-	char name[MAXLEN];
+	char name[MAX];
 	int num;
 }INGREDIENTS;
 

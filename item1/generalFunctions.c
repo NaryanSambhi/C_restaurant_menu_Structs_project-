@@ -1,6 +1,8 @@
 
 #define _CRT_SECURE_NO_WARNINGS
-#define NAMELEN    20
+
+#define FIRST_RECIPE_NUM 1  //to define where first recipe starts (instead of 0)
+
 
 
 // --------------------------------------------------------------------------------------
@@ -118,7 +120,56 @@ char printmenuDinner(void)
 
 
 
-/////////////// OTHER ///////////////
+
+/////////// MAIN SUPPORTING FUNCTIONS ///////////
+
+void listTaken(RECIPE arr[], int num)
+{
+	for (int i = 0; i < num; i++)
+	{
+		if (arr[i].status == true) //taken
+			printf(" %d  ", arr[i].id + FIRST_RECIPE_NUM);
+	}
+}
+
+
+/////////// GENERAL BOOLS ///////////
+bool NoRecipes(RECIPE arr[], int num)
+{
+	int count = 0;
+
+	for (int i = 0; i < num; i++)
+	{
+		if (arr[i].status == false) //if a recipe is flagged as empty add to final count
+			count++;
+	}
+	if (count == num)
+		return true;
+	else
+		return false;
+
+}
+
+//bool for when full or empty logic is required
+		//only used once, added for future reusability sake
+bool FullRecpies(RECIPE arr[], int num)
+{
+	int count = 0;
+
+	for (int i = 0; i < num; i++)
+	{
+		if (arr[i].status == true) //if a recipe is flagged as taken add to final count
+			count++;
+	}
+	if (count == num)
+		return true;
+	else
+		return false;
+
+}
+
+
+/////////////// SAFE GETS ///////////////
 
 //get num only
 
@@ -141,7 +192,7 @@ int NumOnly(int num)
 	return input;
 }
 
-
+/*
 //get string
 void GetUserInputForRecipe(RECIPE arr[], int numrecipe) {
 
@@ -174,3 +225,4 @@ void removeNewLine(char input[]) {
 		}
 	}
 }
+*/
