@@ -17,6 +17,9 @@
 
 //display recipes
 
+
+/////////// FOR OTHERS ///////////
+
 void listTaken(RECIPE arr[], int num)
 {
 	for (int i = 0; i < num; i++)
@@ -26,9 +29,6 @@ void listTaken(RECIPE arr[], int num)
 	}
 }
 
-
-#include "Recipe.h"
-#include "stdio.h"
 
 /////////// GENERAL BOOLS ///////////
 bool NoRecipes(RECIPE arr[], int num)
@@ -128,6 +128,11 @@ void printRecipeHowTo(RECIPE arr[], int num)
 	if (arr[num].cook.cookingmethod == frying)
 		printf("\n\Cooking Method: Fry");
 
+}
+
+void printRecipeIngredients(RECIPE arr[], int num)
+{
+	printf("unfinished");//needs to be able to print array of ingridents
 }
 
 //void printRecipeComplex(RECIPE arr[], int num)
@@ -245,7 +250,7 @@ void deleteRecipe(RECIPE arr[], int num)
 		printf("\nPlease pick a taken Recipe slot: ");
 		recipe = NumOnly(num);
 
-		while (arr[recipe - FIRST_RECIPE_NUM].status == false) //ensures only taken seats can be deleted to avoid garbage and breaking program
+		while (arr[recipe - FIRST_RECIPE_NUM].status == false) //ensures only taken recipes can be deleted to avoid garbage and breaking program
 		{
 			printf("\Recipe is already empty\n");
 			listTaken(arr, num);
@@ -276,14 +281,35 @@ void deleteRecipe(RECIPE arr[], int num)
 
 void displaySingleRecipe(RECIPE arr[], int num) 
 {
-	printf("\ndisplay single recipe function here\n\n\n");
 
+//RETURN IF NO RECIPES FOUND
+	bool emp = NoRecipes(arr, num);
+	if (emp == true)
+	{
+		printf("\n\nNo Recipes detected\n\n");
+		return;
+	}
+	//displays all simple recipes to chose more info on:
+	displayAllRecipes(arr, num);
 
-	//will display complex recipe data
+	//grab which recipe to view more information on: 
+	int recipe;
+	printf("\nPlease pick a Recipe to view more information on: ");
+	recipe = NumOnly(num);
 
-		//nest inside menu?
+	while (arr[recipe - FIRST_RECIPE_NUM].status == false) //ensures only taken recipes can be viewed
+	{
+		printf("\Recipe is empty\n");
+		listTaken(arr, num);
+		printf("\nPlease enter a valid recipe that is displayed above: ");
+		recipe = NumOnly(num);
+	}
 
-		//or ask which recipe data simple more information would like to be found
+//DISPLAY COMPLEX INFROMATION FOR SINGLE SELECTED RECIPE
+	printRecipeSimple(arr, recipe - FIRST_RECIPE_NUM);
+	printRecipeHowTo(arr, recipe - FIRST_RECIPE_NUM);
+	printRecipeIngredients(arr, recipe - FIRST_RECIPE_NUM);
+
 }
 
 void updateRecipe(RECIPE arr[], int num) 

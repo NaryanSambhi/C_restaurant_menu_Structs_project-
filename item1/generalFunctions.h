@@ -25,3 +25,5 @@ char printmenuDinner(void);
 ////////// OTHER //////////
 
 char printmenuMain(void);
+
+int NumOnly(int num);
