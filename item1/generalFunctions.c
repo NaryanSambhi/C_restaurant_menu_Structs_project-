@@ -1,5 +1,6 @@
 
 #define _CRT_SECURE_NO_WARNINGS
+#define NAMELEN    20
 
 
 // --------------------------------------------------------------------------------------
@@ -15,6 +16,9 @@
 /////////////// MENUS ///////////////
 
 #include <stdio.h>
+#include "Recipe.h"
+#include <string.h>
+
 
 char printmenuMain(void)
 {
@@ -139,3 +143,34 @@ int NumOnly(int num)
 
 
 //get string
+void GetUserInputForRecipe(RECIPE arr[], int numrecipe) {
+
+	//void get recipename
+	char recipename[NAMELEN];
+
+	printf("Enter the name for the recipe: ");
+
+	fgets(recipename, NAMELEN, stdin);
+
+	if (strlen[arr[recipename].recipename] > MAX - OFFSET) {
+
+		printf("Overflow error");
+		exit(EXIT_FAILURE);
+	}
+
+	//function call of the remove new line where it will remove the new line created by fgets 
+	removeNewLine(recipename);
+
+	printf("\n");
+
+}
+// removes the newline created by fgets
+void removeNewLine(char input[]) {
+
+	// loops thorugh the length of the string that is inputed, then takes that newline and makes it into a null terminator, thus forcing c to end the null terminator and not display it 
+	for (int i = 0; i < strlen(input); i++) {
+		if (input[i] == '\n') {
+			input[i] = '\0';
+		}
+	}
+}
