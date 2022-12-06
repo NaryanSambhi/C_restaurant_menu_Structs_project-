@@ -18,28 +18,28 @@
 //MAIN
 
 //other 
-void listTaken(RECIPE arr[], int num);
+void listTaken(RECIPE arr[], int num); //x
 
 
 //bools
-bool NoRecipes(RECIPE arr[], int num);
-bool FullRecpies(RECIPE arr[], int num);
+bool NoRecipes(RECIPE arr[], int num); //x
+bool FullRecpies(RECIPE arr[], int num); //x
 
 //prints
-void printRecipeSimple(RECIPE arr[], int num);
-void printRecipeHowTo(RECIPE arr[], int num);
-void printRecipeIngredients(RECIPE arr[], int num);
+void printRecipeSimple(RECIPE arr[], int num); //x
+void printRecipeHowTo(RECIPE arr[], int num); //x
+void printRecipeIngredients(RECIPE arr[], int num); 
 
 
 
 //main
-void searchRecipe(RECIPE arr[], int num);
+void searchRecipe(RECIPE arr[], int num); //x
 
 void displayAllRecipes(RECIPE arr[], int num); //x
 
 void recipeRange(RECIPE arr[], int num);
 
-void displaySingleRecipe(RECIPE arr[], int num);
+void displaySingleRecipe(RECIPE arr[], int num); //x
 
 void addRecipe(RECIPE arr[], int num);
 

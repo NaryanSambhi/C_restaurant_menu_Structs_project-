@@ -127,11 +127,11 @@ void printRecipeHowTo(RECIPE arr[], int num)
 	if (arr[num].cook.cookingmethod == bake)
 		printf("\n\nCooking Method: Bake");
 	if (arr[num].cook.cookingmethod == grill)
-		printf("\n\Cooking Method: Grill");
+		printf("\n\nCooking Method: Grill");
 	if (arr[num].cook.cookingmethod == microwave)
-		printf("\n\Cooking Method: Microwave");
+		printf("\n\nCooking Method: Microwave");
 	if (arr[num].cook.cookingmethod == frying)
-		printf("\n\Cooking Method: Fry");
+		printf("\n\nCooking Method: Fry");
 
 }
 
@@ -193,7 +193,7 @@ void searchRecipe(RECIPE arr[], int num)
 	{
 		if ((strcmp(arr[i].recipeName, temp) == 0))  //if found return
 		{
-			printf("\Recipe Found\n");
+			printf("\nRecipe Found\n");
 			printRecipeSimple(arr, i);
 
 			//ask for complex info?
@@ -212,7 +212,7 @@ void searchRecipe(RECIPE arr[], int num)
 			return;
 		}
 	}
-	printf("\Recipe Not Found\n");
+	printf("\nRecipe Not Found\n");
 }
 
 
@@ -271,18 +271,19 @@ void deleteRecipe(RECIPE arr[], int num)
 	{
 		listTaken(arr, num); //lists taken seats that can be deleted
 
+
+		//user picks a slot
 		int recipe;
 		printf("\nPlease pick a taken Recipe slot: ");
 		recipe = NumOnly(num);
 
 		while (arr[recipe - FIRST_RECIPE_NUM].status == false) //ensures only taken recipes can be deleted to avoid garbage and breaking program
 		{
-			printf("\Recipe is already empty\n");
+			printf("\nRecipe is already empty\n");
 			listTaken(arr, num);
 			printf("\nPlease enter an occupied recipe slot that is displayed above: ");
 			recipe = NumOnly(num);
 		}
-			//user picks a slot
 
 ///CONFIRM
 
@@ -295,7 +296,7 @@ void deleteRecipe(RECIPE arr[], int num)
 		char ch = getchar();
 		if (ch == 'y')
 		{
-			printf("\Recipe Deleted\n");
+			printf("\nRecipe Deleted\n");
 			arr[recipe - FIRST_RECIPE_NUM].status = false; //flag seat status to empty -> does not delete data, only flags for overwriting  
 		}
 		else
@@ -324,7 +325,7 @@ void displaySingleRecipe(RECIPE arr[], int num)
 
 	while (arr[recipe - FIRST_RECIPE_NUM].status == false) //ensures only taken recipes can be viewed
 	{
-		printf("\Recipe is empty\n");
+		printf("\nRecipe is empty\n");
 		listTaken(arr, num);
 		printf("\nPlease enter a valid recipe that is displayed above: ");
 		recipe = NumOnly(num);
