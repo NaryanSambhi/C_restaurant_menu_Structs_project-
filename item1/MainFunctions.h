@@ -17,14 +17,20 @@
 
 //MAIN
 
-bool NoRecipes(RECIPE arr[], int num);
+//other 
+void listTaken(RECIPE arr[], int num);
 
+
+//bools
+bool NoRecipes(RECIPE arr[], int num);
 bool FullRecpies(RECIPE arr[], int num);
 
+//prints
 void printRecipeSimple(RECIPE arr[], int num);
+void printRecipeHowTo(RECIPE arr[], int num);
 
 
-
+//main
 void searchRecipe(RECIPE arr[], int num);
 
 void displayAllRecipes(RECIPE arr[], int num);

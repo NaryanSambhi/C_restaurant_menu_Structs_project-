@@ -7,8 +7,25 @@
 // --------------------------------------------------------------------------------------
 // Main Functions file
 
+#include "Recipe.h"
+#include <stdbool.h>
+#include <stdio.h>
+#include "generalFunctions.h"
+#include "generalFunctions.h"
+
+#define FIRST_RECIPE_NUM 1  //to define where first recipe starts (instead of 0)
 
 //display recipes
+
+void listTaken(RECIPE arr[], int num)
+{
+	for (int i = 0; i < num; i++)
+	{
+		if (arr[i].status == true) //taken
+			printf(" %d  ", arr[i].id + FIRST_RECIPE_NUM);
+	}
+}
+
 
 #include "Recipe.h"
 #include "stdio.h"
@@ -29,7 +46,6 @@ bool NoRecipes(RECIPE arr[], int num)
 		return false;
 
 }
-
 
 //bool for when full or empty logic is required
 		//only used once, added for future reusability sake
@@ -82,11 +98,35 @@ typedef struct recipe {
 	*/
 
 
+
+
 void printRecipeSimple(RECIPE arr[], int num)
 {
 	printf("\n %d: %s, $%d", arr[num].id, arr[num].recipeName, arr[num].price);
 
 	//any enum ids under here:  
+
+}
+
+void printRecipeHowTo(RECIPE arr[], int num)
+{
+
+	//ints 
+	printf("\nPrep-time: %d", arr[num].cook.preptime);
+	printf("\n\nCook-time: %d", arr[num].cook.cooktime);
+	printf("\n\nReady-time: %d", arr[num].cook.readytime);
+	printf("\n\nTemprature: %d", arr[num].cook.temp);
+
+
+	//cook type
+	if (arr[num].cook.cookingmethod == bake)
+		printf("\n\nCooking Method: Bake");
+	if (arr[num].cook.cookingmethod == grill)
+		printf("\n\Cooking Method: Grill");
+	if (arr[num].cook.cookingmethod == microwave)
+		printf("\n\Cooking Method: Microwave");
+	if (arr[num].cook.cookingmethod == frying)
+		printf("\n\Cooking Method: Fry");
 
 }
 
@@ -111,18 +151,11 @@ void displayAllRecipes(RECIPE arr[], int num)
 	{
 		for (int i = 0; i < num; i++)
 		{
-			if (arr[i].status == true) //if seat flagged as taken, print data
-			{								//this avoids printing old data from deleted seats
+			if (arr[i].status == true) //if recipe slot flagged as taken, print data
+			{								//this avoids printing old data from deleted recipes
 				printRecipeSimple(arr, i);
 			}
 		}
-		//extra layer for show menu info
-
-			//--> select recipe to see moredata on
-				//print recipe item data
-
-			// or exit 
-
 	}
 
 }
@@ -200,28 +233,43 @@ void addRecipe(RECIPE arr[], int num)
 
 void deleteRecipe(RECIPE arr[], int num) 
 {
-	printf("\ndelete recipes function here\n\n\n");
-
 	//check if there are recipe slots taken yet
 	bool emp = NoRecipes(arr, num);
 	if (emp == true)
 		printf("\nNo recipes assigned yet");
 	else
 	{
-		//list taken
+		listTaken(arr, num); //lists taken seats that can be deleted
+
+		int recipe;
+		printf("\nPlease pick a taken Recipe slot: ");
+		recipe = NumOnly(num);
+
+		while (arr[recipe - FIRST_RECIPE_NUM].status == false) //ensures only taken seats can be deleted to avoid garbage and breaking program
+		{
+			printf("\Recipe is already empty\n");
+			listTaken(arr, num);
+			printf("\nPlease enter an occupied recipe slot that is displayed above: ");
+			recipe = NumOnly(num);
+		}
 			//user picks a slot
 
-		//if slot is already empty either reject
+///CONFIRM
 
+		printf("\n\nCONFIRM DETAILS:\n");
+		printRecipeSimple(arr, recipe - FIRST_RECIPE_NUM);
 
+		//get input
+		printf("\nEnter 'y' to confirm or 'n' to cancel: ");
 
-		//confrim deletion function
-		// print recipe data simple
-	
-			//if confirmed
-				//arr[recipe - 1] = false //flags recipe for overwriting
-			//else
-				//print delte cancelled
+		char ch = getchar();
+		if (ch == 'y')
+		{
+			printf("\Recipe Deleted\n");
+			arr[recipe - FIRST_RECIPE_NUM].status = false; //flag seat status to empty -> does not delete data, only flags for overwriting  
+		}
+		else
+			printf("\nDeletion Cancelled\n");
 
 	}
 }
@@ -229,6 +277,7 @@ void deleteRecipe(RECIPE arr[], int num)
 void displaySingleRecipe(RECIPE arr[], int num) 
 {
 	printf("\ndisplay single recipe function here\n\n\n");
+
 
 	//will display complex recipe data
 
