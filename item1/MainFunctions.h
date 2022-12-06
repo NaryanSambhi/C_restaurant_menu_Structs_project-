@@ -35,7 +35,7 @@ void printRecipeIngredients(RECIPE arr[], int num);
 //main
 void searchRecipe(RECIPE arr[], int num);
 
-void displayAllRecipes(RECIPE arr[], int num);
+void displayAllRecipes(RECIPE arr[], int num); //x
 
 void recipeRange(RECIPE arr[], int num);
 
@@ -43,6 +43,6 @@ void displaySingleRecipe(RECIPE arr[], int num);
 
 void addRecipe(RECIPE arr[], int num);
 
-void deleteRecipe(RECIPE arr[], int num);
+void deleteRecipe(RECIPE arr[], int num); //x
 
 void updateRecipe(RECIPE arr[], int num);

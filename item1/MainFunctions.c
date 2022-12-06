@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 
 // --------------------------------------------------------------------------------------
 // PROG71985 - F22																	   //
@@ -7,11 +8,15 @@
 // --------------------------------------------------------------------------------------
 // Main Functions file
 
-#include "Recipe.h"
 #include <stdbool.h>
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+
 #include "generalFunctions.h"
 #include "generalFunctions.h"
+#include "Recipe.h"
 
 #define FIRST_RECIPE_NUM 1  //to define where first recipe starts (instead of 0)
 
@@ -167,27 +172,47 @@ void displayAllRecipes(RECIPE arr[], int num)
 
 void searchRecipe(RECIPE arr[], int num) 
 {
-	printf("\nsearch all recipe function here\n\n\n");
+	//grab user input
+	char temp[MAX] = { '\0' };
 
-	//grab user input into temp
+	printf("\nInput recipe name: ");
+	scanf("%s", temp);
 
+	//incase customer searched with lowercase name
+	temp[0] = toupper(temp[0]);
 
-	//toupper first letter to capital
+	//stop overflow
+	if (strlen(temp) > MAX)
+	{
+		printf("\nOVERFLOW ERROR");
+		exit(EXIT_FAILURE);
+	}
 
+	//search for name from recipes
+	for (int i = 0; i < num; i++)
+	{
+		if ((strcmp(arr[i].recipeName, temp) == 0))  //if found return
+		{
+			printf("\Recipe Found\n");
+			printRecipeSimple(arr, i);
 
-	//if string is larger then max exit with error or reask input to avoid garbage
+			//ask for complex info?
+			printf("\nWould you like to print the recipes information?\n");
+			printf("\nEnter 'y' to confirm or 'n' to cancel: ");
 
-	//for loop to search for name
+			char ch = getchar();
+			if (ch == 'y')
+			{
+				printRecipeHowTo(arr, i);
+				printRecipeIngredients(arr, i);
+			}
+			else
+				continue;
 
-		//if strcmp recipe name, temp == 0 (if found) 
-			//print recipe found
-			//print recipe data
-			//return
-
-
-
-		//no passenger found
-		//return 
+			return;
+		}
+	}
+	printf("\Recipe Not Found\n");
 }
 
 
