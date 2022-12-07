@@ -38,8 +38,8 @@ void GetRecipeName(RECIPE arr[], int num)
 
 void GetPrice(RECIPE arr[], int num)
 {
-	printf("Insert a price: ");
-	while (scanf("%d", &arr[num].price) != 1)
+	printf("\nInsert a number for the price: ");
+	while (scanf("%f", &arr[num].price) != 1)
 	{
 		printf("Invalid Input Error \n");
 		exit(EXIT_FAILURE);
@@ -50,24 +50,55 @@ void GetPrice(RECIPE arr[], int num)
 	((c = getchar()) != '\n' && c != EOF); //ensure new line and white space from scanf isnt added to fgets functions
 }
 
+
+//get type 
+void GetMealType(RECIPE arr[], int num)
+{
+	printf("\nSelect a following type for your recipe:\n");
+	printf("a) breakfast\n");
+	printf("b) lunch\n");
+	printf("c) dinner\n");
+
+	//user input to pick
+	char ch = getchar();
+	while (ch != 'a' && ch != 'b' & ch != 'c')
+	{
+		ch = getchar();
+		printf("\ninvalid input, please re-enter: ");
+		ch = getchar(); //asked twice to avoid printing message twice when user is inputing
+
+	}
+	if (ch == 'a')
+		arr[num].type = breakfast;
+	if (ch == 'b')
+		arr[num].type = lunch;
+	if (ch == 'c')
+		arr[num].type = dinner;
+
+	printf("\n");
+}
+
+
+//all
 void GetRecipeAll(RECIPE arr[], int num)
 {
 	GetRecipeName(arr, num);
 	GetPrice(arr, num);
+	GetMealType(arr, num);
 }
-
-//get type
 
 /////////// GET INGREDIENTS ///////////
 
 //get input and put into struct
+
+//remember to implement into all functions once made
 
 
 /////////// GET COOK ///////////
 
 void GetPrepTime(RECIPE arr[], int num)
 {
-	printf("Insert a prep-time: ");
+	printf("Insert minutes for the prep-time: ");
 	while (scanf("%d", &arr[num].cook.preptime) != 1)
 	{
 		printf("Invalid Input Error \n");
@@ -82,7 +113,7 @@ void GetPrepTime(RECIPE arr[], int num)
 
 void GetReadyTime(RECIPE arr[], int num)
 {
-	printf("Insert a ready in time: ");
+	printf("Insert minutes for the ready in time: ");
 	while (scanf("%d", &arr[num].cook.readytime) != 1)
 	{
 		printf("Invalid Input Error \n");
@@ -97,7 +128,7 @@ void GetReadyTime(RECIPE arr[], int num)
 
 void GetCookTime(RECIPE arr[], int num)
 {
-	printf("Insert a cook time: ");
+	printf("Insert minutes for the cook time: ");
 	while (scanf("%d", &arr[num].cook.cooktime) != 1)
 	{
 		printf("Invalid Input Error \n");
@@ -112,7 +143,7 @@ void GetCookTime(RECIPE arr[], int num)
 
 void GetTemprature(RECIPE arr[], int num)
 {
-	printf("Insert a temprature: ");
+	printf("Insert degrees for the temprature: ");
 	while (scanf("%d", &arr[num].cook.temp) != 1)
 	{
 		printf("Invalid Input Error \n");
@@ -128,7 +159,7 @@ void GetTemprature(RECIPE arr[], int num)
 void GetCookMethod(RECIPE arr[], int recipe)
 {
 	//grab first name
-	printf("\nPlease enter cooking method: ");
+	printf("Please enter cooking method used: ");
 	fgets(arr[recipe].cook.method, MAX, stdin);
 
 	if (strlen(arr[recipe].cook.method) > MAX - OFFSET) //checking for garbage
@@ -141,6 +172,7 @@ void GetCookMethod(RECIPE arr[], int recipe)
 	arr[recipe].cook.method[strcspn(arr[recipe].cook.method, "\n")] = 0;
 }
 
+//all
 void GetCookAll(RECIPE arr[], int num)
 {
 	GetPrepTime(arr, num);

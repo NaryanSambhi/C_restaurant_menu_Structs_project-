@@ -107,8 +107,17 @@ void addRecipe(RECIPE arr[], int num)
 	//list recipe slots that can be written into
 	listEmpty(arr, num);
 
+	printf("\n\nPlease select a free menu slot to assign the recipe: ");
+
 	//grab input
 	int recipe = NumOnly(arr, num);
+
+	if (arr[recipe].status == true)
+	{
+		printf("\nRecipe already assigned in selected slot \n\n");
+		return;
+	}
+
 
 //////////////////////////////////////////////////////////
 
@@ -121,6 +130,8 @@ void addRecipe(RECIPE arr[], int num)
 	printf("\n\nCONFIRM DETAILS:\n");
 
 	printRecipeSimple(arr, recipe);
+
+
 	printRecipeHowTo(arr, recipe);
 
 
@@ -128,16 +139,16 @@ void addRecipe(RECIPE arr[], int num)
 
 
 	//get input
-	printf("\nEnter 'y' to confirm or 'n' to cancel: ");
+	printf("\n\n\nEnter 'y' to confirm or 'n' to cancel: ");
 
 	char ch = getchar();
 	if (ch == 'y')
 	{
-		printf("\Recipe Created");
+		printf("\nRecipe Created\n\n");
 		arr[recipe].status = true; //flag status to taken 
 	}
 	else
-		printf("\Recipe Creation Cancelled");
+		printf("\nRecipe Creation Cancelled\n\n");
 
 }
 
@@ -152,9 +163,15 @@ void deleteRecipe(RECIPE arr[], int num)
 	}
 
 	listTaken(arr, num); //lists taken recipes that can be deleted
+	printf("\n");
 
 	//grab input
 	int recipe = NumOnly(arr, num);
+	if (arr[recipe].status == false)
+	{
+		printf("\nRecipe slot already empty\n");
+		return;
+	}
 
 	///CONFIRM
 	printf("\n\nCONFIRM DETAILS:\n");
@@ -188,8 +205,15 @@ void displaySingleRecipe(RECIPE arr[], int num)
 	//displays all simple recipes to chose more info on:
 	displayAllRecipes(arr, num);
 
+	printf("\n\nPlease select a recipe to print full recipe data");
+
 	//grab which recipe to view more information on: 
-	int recipe = GetTakenRecipe(arr, num);
+	int recipe = NumOnly(arr, num);
+	if (arr[recipe].status == false)
+	{
+		printf("\nRecipe slot is empty\n");
+		return;
+	}
 
 //DISPLAY COMPLEX INFROMATION FOR SINGLE SELECTED RECIPE
 	printRecipeSimple(arr, recipe);

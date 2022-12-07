@@ -41,7 +41,7 @@ typedef struct recipe
 //upper level
 	int id; //numer of item in list of slots 0-5
 	char recipeName[MAX];
-	int price; 
+	float price; 
 	enum TYPE {breakfast, lunch, dinner} type;
 
 

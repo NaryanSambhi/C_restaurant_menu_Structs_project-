@@ -29,5 +29,3 @@ bool FullRecpies(RECIPE arr[], int num);
 ////////// SAFE GETS //////////
 
 int NumOnly(int num);
-int GetTakenRecipe(RECIPE arr[], int num);
-int GetEmptyRecipe(RECIPE arr[], int num);

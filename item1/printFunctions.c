@@ -16,19 +16,19 @@
 void printRecipeSimple(RECIPE arr[], int num)
 {
 	//print
-	printf("\n%d: %s, $%d", arr[num].id, arr[num].recipeName, arr[num].price);
+	printf("\n%d: %s, $%.2f", arr[num].id, arr[num].recipeName, arr[num].price);
 
 	if (arr[num].type == breakfast)
-		printf("\nType: Breakfast");
+		printf(" Breakfast");
 	if (arr[num].type == lunch)
-		printf("\nType: Lunch");
+		printf(" Lunch");
 	if (arr[num].type == dinner)
-		printf("\nType: Dinner");
+		printf(" Dinner");
 }
 
 void printRecipeHowTo(RECIPE arr[], int num)
 {
-	//print
+	printf("\n\nHOW TO COOK:\n");
 	printf("\nPrep-time: %d", arr[num].cook.preptime);
 	printf("\nReadyIn time: %d", arr[num].cook.readytime);
 	printf("\nCook time: %d", arr[num].cook.cooktime);

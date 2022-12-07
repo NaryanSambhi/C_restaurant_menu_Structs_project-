@@ -19,6 +19,8 @@ void GetRecipeName(RECIPE arr[], int recipe);
 
 void GetPrice(RECIPE arr[], int num);
 
+void GetMealType(RECIPE arr[], int num);
+
 void GetRecipeAll(RECIPE arr[], int num);
 
 

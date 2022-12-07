@@ -23,7 +23,7 @@ void listTaken(RECIPE arr[], int num)
 	for (int i = 0; i < num; i++)
 	{
 		if (arr[i].status == true) //taken
-			printf(" %d  ", arr[i].id);
+			printf("%d  ", arr[i].id);
 	}
 }
 //lists all recipes flagged as false (empty)
@@ -32,7 +32,7 @@ void listEmpty(RECIPE arr[], int num)
 	for (int i = 0; i < num; i++)
 	{
 		if (arr[i].status == false) //empty
-			printf(" %d  ", arr[i].id); 
+			printf("%d  ", arr[i].id); 
 	}
 }
 
@@ -94,33 +94,4 @@ int NumOnly(int num)
 	((c = getchar()) != '\n' && c != EOF); //ensure new line and white space from scanf isnt added to fgets functions
 
 	return input;
-}
-
-
-int GetTakenRecipe(RECIPE arr[], int num)
-{
-	int recipe;
-	recipe = NumOnly(num);
-
-	while (arr[recipe].status == false) //ensures only taken recipes can be accessed
-	{
-		printf("\nRecipe is empty\n");
-		listTaken(arr, num);
-		printf("\nPlease enter a valid recipe that is displayed above: ");
-		recipe = NumOnly(num);
-	}
-}
-
-int GetEmptyRecipe(RECIPE arr[], int num)
-{
-	int recipe;
-	recipe = NumOnly(num);
-
-	while (arr[recipe].status == true) //ensures only non-taken recipes can be accessed
-	{
-		printf("\nRecipe is taken\n");
-		listEmpty(arr, num);
-		printf("\nPlease enter a valid recipe that is displayed above: ");
-		recipe = NumOnly(num);
-	}
 }
