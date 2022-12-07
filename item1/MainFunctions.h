@@ -5,14 +5,14 @@
 // PROG71985 - F22																	   //
 // GROUP PROJECT - DEC 2022															   //
 //																					   //
-// Naryan Sambhi, Katrina Lukic, Muhammad Asim										   //
+// Naryan Sambhi, Katarina Lukic, Muhammad Asim										   //
 //																					   //
-//						HEADER FILE TO MAIN FUNCTIONS								   //
+//						HEADER FILE FOR MAIN FUNCTIONS								   //
 //																					   //
 // --------------------------------------------------------------------------------------
 
 
-//MAIN
+//MAIN functions for the menu // 
 void searchRecipe(RECIPE arr[], int num); 
 
 void displayAllRecipes(RECIPE arr[], int num); 

@@ -4,7 +4,7 @@
 // PROG71985 - F22																	   //
 // GROUP PROJECT - DEC 2022															   //
 //																					   //
-// Naryan Sambhi, Katrina Lukic, Muhammad Asim										   //
+// Naryan Sambhi, Katarina Lukic, Muhammad Asim										   //
 // --------------------------------------------------------------------------------------
 // Main Functions file
 
@@ -15,6 +15,7 @@
 #include <ctype.h>
 
 #include "generalFunctions.h"
+#include "MainFunctions.h"
 #include "Recipe.h"
 #include "printFunctions.h"
 

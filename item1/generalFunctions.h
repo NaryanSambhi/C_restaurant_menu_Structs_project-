@@ -1,13 +1,14 @@
 #pragma once
 #include "Recipe.h"
 
+
 // --------------------------------------------------------------------------------------
 // PROG71985 - F22																	   //
 // GROUP PROJECT - DEC 2022															   //
 //																					   //
-// Naryan Sambhi, Katrina Lukic, Muhammad Asim										   //
+// Naryan Sambhi, Katarina Lukic, Muhammad Asim										   //
 //																					   //
-//						HEADER FILE TO GENERAL FUNCTIONS							   //
+//						HEADER FILE FOR GENERAL FUNCTIONS							   //
 //																					   //
 // --------------------------------------------------------------------------------------
 

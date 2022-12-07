@@ -1,9 +1,18 @@
 #include "Recipe.h"
 #include "generalFunctions.h"
+#include "MainFunctions.h"
 #include <stdio.h>
 
 
 #define FIRST_RECIPE_NUM 1  //to define where first recipe starts (instead of 0)
+
+// --------------------------------------------------------------------------------------
+// PROG71985 - F22																	   //
+// GROUP PROJECT - DEC 2022															   //
+//																					   //
+// Naryan Sambhi, Katarina Lukic, Muhammad Asim										   //
+// --------------------------------------------------------------------------------------
+//  Get Recipe from User
 
 
 /////////// GET RECIPE ///////////

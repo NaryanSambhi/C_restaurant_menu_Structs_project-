@@ -4,7 +4,7 @@
 // PROG71985 - F22																	   //
 // GROUP PROJECT - DEC 2022															   //
 //																					   //
-// Naryan Sambhi, Katrina Lukic, Muhammad Asim										   //
+// Naryan Sambhi, Katarina Lukic, Muhammad Asim										   //
 //																					   //
 //								RECIPE STRUCT HEADER FILE							   //
 //																					   //
@@ -14,7 +14,7 @@
 
 #include <stdbool.h>
 
-// typedef struct to store the recipes, and the otehr two structs Ingredients, and cooking 
+// typedef struct to store the recipes, and the other two structs Ingredients, and cooking 
 
 #define MAX 20
 
