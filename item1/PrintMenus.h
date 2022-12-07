@@ -1,6 +1,4 @@
 #pragma once
-#include "Recipe.h"
-
 
 // --------------------------------------------------------------------------------------
 // PROG71985 - F22																	   //
@@ -8,26 +6,18 @@
 //																					   //
 // Naryan Sambhi, Katarina Lukic, Muhammad Asim										   //
 //																					   //
-//						HEADER FILE FOR GENERAL FUNCTIONS							   //
+//						HEADER FILE FOR MENU FUNCTIONS							   //
 //																					   //
 // --------------------------------------------------------------------------------------
 
 
 
-////////// MAIN SUPPORTING FUNCTIONS //////////
+////////// MENUS //////////
 
-//other 
-void listTaken(RECIPE arr[], int num);
-void listEmpty(RECIPE arr[], int num);
+char printmenuBreakfast(void);
 
+char printmenuLunch(void);
 
-//bools
-bool NoRecipes(RECIPE arr[], int num);
-bool FullRecpies(RECIPE arr[], int num);
+char printmenuDinner(void);
 
-
-////////// SAFE GETS //////////
-
-int NumOnly(int num);
-int GetTakenRecipe(RECIPE arr[], int num);
-int GetEmptyRecipe(RECIPE arr[], int num);
+char printmenuMain(void);

@@ -18,8 +18,7 @@
 
 #include "Recipe.h"
 #include "MainFunctions.h"
-#include "generalFunctions.h"
-
+#include "PrintMenus.h"
 
 #define MENUSIZE 6 //LIMITED TO 6 INPUTS PER MEAL SECTION (AIMED FOR CULINARY BUSINESSES)
 
@@ -76,7 +75,7 @@ void breakfast(void)
 			continueProgram = false; 
 			break;
 		default:
-			printf("\ninvalid entry\n\n\n"); 
+			printf("\ninvalid entry\n"); 
 			break;
 		}
 	}

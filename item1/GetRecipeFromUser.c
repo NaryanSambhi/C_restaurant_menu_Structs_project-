@@ -26,6 +26,7 @@
 
 
 /////////// GET COOK ///////////
+
 void GetPrepTime(RECIPE arr[], int num)
 {
     printf("\nPlease enter prep-time: ");
@@ -48,5 +49,15 @@ void GetTemprature(RECIPE arr[], int num)
 }
 void GetCookMethod(RECIPE arr[], int num)
 {
+    //enum COOKINGMETHOD { bake, grill, microwave, frying } cookingmethod; //add more here 
+
+}
+
+void GetCookAll(RECIPE arr[], int num)
+{
+
+
+
+
 
 }

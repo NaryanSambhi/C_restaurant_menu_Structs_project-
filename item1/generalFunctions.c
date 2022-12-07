@@ -11,124 +11,32 @@
 //																					   //
 // Naryan Sambhi, Katarina Lukic, Muhammad Asim										   //
 // --------------------------------------------------------------------------------------
-//  menu function file
+//  general function file
 
 #include <stdlib.h>
-
-/////////////// MENUS ///////////////
-
 #include <stdio.h>
+
 #include "Recipe.h"
-#include <string.h>
-
-
-char printmenuMain(void)
-{
-	printf_s("\n");
-	printf_s("**************************************\n");
-	printf_s("**            Welcome to            **\n");
-	printf_s("**         Cafe Menu Manager        **\n");
-	printf_s("**************************************\n");
-
-	printf("\nTo choose a function, enter its label: \n");
-	printf("a) Breakfast\n");
-	printf("b) Lunch\n");
-	printf("c) Dinner\n");
-	printf("q) Quit\n");
-
-	char choice;
-	printf("\nEnter Choice: ");
-	scanf(" %c", &choice); //return to main input
-
-	return choice;
-}
-
-char printmenuBreakfast(void)
-{
-	printf_s("\n");
-	printf_s("**************************************\n");
-	printf_s("**            Welcome to            **\n");
-	printf_s("**       Breakfast Menu Manager     **\n");
-	printf_s("**************************************\n");
-
-	printf("\nTo choose a function, enter its label: \n");
-	printf("a) Search Recipes\n");
-	printf("b) Display All Recipes\n");
-	printf("c) Display Range of Recipes\n");
-	printf("d) Display Single Recipe\n");
-	printf("e) Add Recipe\n");
-	printf("f) Delete Recipe\n");
-	printf("g) Update Existing Recipe\n");
-	printf("h) Quit\n");
-
-	char choice;
-	printf("\nEnter Choice: ");
-	scanf(" %c", &choice); //return to main input
-
-	return choice;
-}
-
-char printmenuLunch(void)
-{
-	printf_s("\n");
-	printf_s("**************************************\n");
-	printf_s("**           Welcome to             **\n");
-	printf_s("**        Lunch Menu Manager        **\n");
-	printf_s("**************************************\n");
-
-	printf("\nTo choose a function, enter its label: \n");
-	printf("a) Search Recipes\n");
-	printf("b) Display All Recipes\n");
-	printf("c) Display Range of Recipes\n");
-	printf("d) Display Single Recipe\n");
-	printf("e) Add Recipe\n");
-	printf("f) Delete Recipe\n");
-	printf("g) Update Existing Recipe\n");
-	printf("h) Quit\n");
-
-	char choice;
-	printf("\nEnter Choice: ");
-	scanf(" %c", &choice); //return to main input
-
-	return choice;
-}
-
-char printmenuDinner(void)
-{
-	printf_s("\n");
-	printf_s("**************************************\n");
-	printf_s("**           Welcome to             **\n");
-	printf_s("**       Dinner Menu Manager        **\n");
-	printf_s("**************************************\n");
-
-	printf("\nTo choose a function, enter its label: \n");
-	printf("a) Search Recipes\n");
-	printf("b) Display All Recipes\n");
-	printf("c) Display Range of Recipes\n");
-	printf("d) Display Single Recipe\n");
-	printf("e) Add Recipe\n");
-	printf("f) Delete Recipe\n");
-	printf("g) Update Existing Recipe\n");
-	printf("h) Quit\n");
-
-	char choice;
-	printf("\nEnter Choice: ");
-	scanf(" %c", &choice); //return to main input
-
-	return choice;
-}
-
-
-
 
 /////////// MAIN SUPPORTING FUNCTIONS ///////////
 
+//lists all recipes flagged as true (taken )
 void listTaken(RECIPE arr[], int num)
 {
 	for (int i = 0; i < num; i++)
 	{
 		if (arr[i].status == true) //taken
 			printf(" %d  ", arr[i].id + FIRST_RECIPE_NUM);
+	}
+}
+
+//lists all recipes flagged as false (empty)
+void listEmpty(RECIPE arr[], int num)
+{
+	for (int i = 0; i < num; i++)
+	{
+		if (arr[i].status == false) //empty
+			printf(" %d  ", arr[i].id + FIRST_RECIPE_NUM); 
 	}
 }
 
@@ -191,6 +99,38 @@ int NumOnly(int num)
 
 	return input;
 }
+
+
+int GetTakenRecipe(RECIPE arr[], int num)
+{
+	int recipe;
+	recipe = NumOnly(num);
+
+	while (arr[recipe - FIRST_RECIPE_NUM].status == false) //ensures only taken recipes can be accessed
+	{
+		printf("\nRecipe is empty\n");
+		listTaken(arr, num);
+		printf("\nPlease enter a valid recipe that is displayed above: ");
+		recipe = NumOnly(num);
+	}
+}
+
+int GetEmptyRecipe(RECIPE arr[], int num)
+{
+	int recipe;
+	recipe = NumOnly(num);
+
+	while (arr[recipe - FIRST_RECIPE_NUM].status == true) //ensures only non-taken recipes can be accessed
+	{
+		printf("\nRecipe is taken\n");
+		listEmpty(arr, num);
+		printf("\nPlease enter a valid recipe that is displayed above: ");
+		recipe = NumOnly(num);
+	}
+}
+
+
+
 
 /*
 //get string

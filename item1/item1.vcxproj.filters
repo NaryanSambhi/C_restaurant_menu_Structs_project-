@@ -48,6 +48,12 @@
     <ClCompile Include="printFunctions.c">
       <Filter>Source Files\FUNCTIONS</Filter>
     </ClCompile>
+    <ClCompile Include="GetRecipesFromUser.c">
+      <Filter>Header Files\FUNCTIONS</Filter>
+    </ClCompile>
+    <ClCompile Include="PrintMenus.c">
+      <Filter>Source Files\FUNCTIONS</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Meals.h">
@@ -64,6 +70,9 @@
     </ClInclude>
     <ClInclude Include="Recipe.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PrintMenus.h">
+      <Filter>Header Files\FUNCTIONS</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

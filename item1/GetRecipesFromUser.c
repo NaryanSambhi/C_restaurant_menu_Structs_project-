@@ -1,6 +1,6 @@
 #pragma once
-#include "Recipe.h"
 
+#include "Recipe.h"
 
 // --------------------------------------------------------------------------------------
 // PROG71985 - F22																	   //
@@ -8,26 +8,30 @@
 //																					   //
 // Naryan Sambhi, Katarina Lukic, Muhammad Asim										   //
 //																					   //
-//						HEADER FILE FOR GENERAL FUNCTIONS							   //
+//						HEADER FILE FOR GET RECIPE FUNCTIONS						   //
 //																					   //
 // --------------------------------------------------------------------------------------
 
 
-
-////////// MAIN SUPPORTING FUNCTIONS //////////
-
-//other 
-void listTaken(RECIPE arr[], int num);
-void listEmpty(RECIPE arr[], int num);
+/////////// GET RECIPE ///////////
 
 
-//bools
-bool NoRecipes(RECIPE arr[], int num);
-bool FullRecpies(RECIPE arr[], int num);
 
 
-////////// SAFE GETS //////////
+/////////// GET INGREDIENTS ///////////
 
-int NumOnly(int num);
-int GetTakenRecipe(RECIPE arr[], int num);
-int GetEmptyRecipe(RECIPE arr[], int num);
+
+
+/////////// GET COOK ///////////
+
+void GetPrepTime(RECIPE arr[], int num);
+
+void GetCookTime(RECIPE arr[], int num); 
+
+void GetReadyTime(RECIPE arr[], int num);
+
+void GetTemprature(RECIPE arr[], int num); 
+
+void GetCookMethod(RECIPE arr[], int num);
+
+void GetCookAll(RECIPE arr[], int num);

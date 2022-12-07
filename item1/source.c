@@ -38,14 +38,8 @@
 ///////////// BUGS LOG /////////////
 
 //MAJOR ISSUES
-
 //MINOR ISSUES
-
-
-
 //UNIMPLEMENTED
-
-
 
 ///////////// PROGRAM /////////////
 
@@ -55,8 +49,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "generalFunctions.h"
 #include "Meals.h"
+#include "PrintMenus.h"
 
 //main
 int main(void)

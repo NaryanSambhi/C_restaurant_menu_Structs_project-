@@ -131,16 +131,19 @@
     <ClCompile Include="Breakfast.c" />
     <ClCompile Include="Dinner.c" />
     <ClCompile Include="GetRecipeFromUser.c" />
+    <ClCompile Include="GetRecipesFromUser.c" />
     <ClCompile Include="Lunch.c" />
     <ClCompile Include="MainFunctions.c" />
     <ClCompile Include="generalFunctions.c" />
     <ClCompile Include="printFunctions.c" />
+    <ClCompile Include="PrintMenus.c" />
     <ClCompile Include="source.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainFunctions.h" />
     <ClInclude Include="Meals.h" />
     <ClInclude Include="printFunctions.h" />
+    <ClInclude Include="PrintMenus.h" />
     <ClInclude Include="Recipe.h" />
     <ClInclude Include="generalFunctions.h" />
   </ItemGroup>
