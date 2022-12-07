@@ -63,7 +63,9 @@ int main(void)
 	FILE* fp;
 	size_t size = sizeof(RECIPE);
 
-	RECIPE menu[MENUSIZE];
+	RECIPE menu[MENUSIZE]={'\0'};
+
+	//INGREDIENTS MenuIngredients[10]={'\0'}; -> maybe add sepperate array inside for ingredients
 
 //if no contents detected:
 

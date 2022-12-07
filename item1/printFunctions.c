@@ -38,7 +38,9 @@ void printRecipeHowTo(RECIPE arr[], int num)
 
 void printRecipeIngredients(RECIPE arr[], int num)
 {
-	printf("unfinished");//needs to be able to print array of ingridents
+
+
+
 }
 
 //void printRecipeComplex(RECIPE arr[], int num)

@@ -123,6 +123,8 @@ void addRecipe(RECIPE arr[], int num)
 
 	GetRecipeAll(arr, recipe);
 
+	GetIngredients(arr, recipe);
+
 	GetCookAll(arr, recipe);
 
 
@@ -130,6 +132,8 @@ void addRecipe(RECIPE arr[], int num)
 	printf("\n\nCONFIRM DETAILS:\n");
 
 	printRecipeSimple(arr, recipe);
+
+	printRecipeIngredients(arr, recipe);
 
 
 	printRecipeHowTo(arr, recipe);

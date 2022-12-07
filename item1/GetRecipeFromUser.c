@@ -91,6 +91,13 @@ void GetRecipeAll(RECIPE arr[], int num)
 
 //get input and put into struct
 
+
+void GetIngredients(RECIPE arr[], int num)
+{
+
+}
+
+
 //remember to implement into all functions once made
 
 
