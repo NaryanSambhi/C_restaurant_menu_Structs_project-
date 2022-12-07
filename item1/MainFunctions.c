@@ -110,35 +110,35 @@ void addRecipe(RECIPE arr[], int num)
 	//grab input
 	int recipe = NumOnly(arr, num);
 
-	GetRecipeName(arr, recipe);
+//////////////////////////////////////////////////////////
 
-	printf("Insert price: ");
-	scanf("%d", &arr[recipe].price);
+	GetRecipeAll(arr, recipe);
+
+	GetCookAll(arr, recipe);
+
+
+//CONFRIM
+	printf("\n\nCONFIRM DETAILS:\n");
 
 	printRecipeSimple(arr, recipe);
+	printRecipeHowTo(arr, recipe);
 
-	arr[recipe].status = true; //flag status to taken 
 
-	
+//////////////////////////////////////////////////////////
 
-		//CONFRIM DETAILS
-		//print confirm
 
-		//print AllData function --> unimplement but will print all recipe data created
+	//get input
+	printf("\nEnter 'y' to confirm or 'n' to cancel: ");
 
-		/*
-		//get input
-		printf("\nEnter 'y' to confirm or 'n' to cancel: ");
+	char ch = getchar();
+	if (ch == 'y')
+	{
+		printf("\Recipe Created");
+		arr[recipe].status = true; //flag status to taken 
+	}
+	else
+		printf("\Recipe Creation Cancelled");
 
-		char ch = getchar();
-		if (ch == 'y')
-		{
-			printf("\Recipe Created");
-			//arr[recipe - 1].status = true; //flag status to taken 
-		}
-		else
-			printf("\nAssignment Cancelled");
-		*/
 }
 
 void deleteRecipe(RECIPE arr[], int num) 

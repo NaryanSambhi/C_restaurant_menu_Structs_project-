@@ -18,18 +18,22 @@ void printRecipeSimple(RECIPE arr[], int num)
 	//print
 	printf("\n%d: %s, $%d", arr[num].id, arr[num].recipeName, arr[num].price);
 
-	//any enum ids under here:  
-
+	if (arr[num].type == breakfast)
+		printf("\nType: Breakfast");
+	if (arr[num].type == lunch)
+		printf("\nType: Lunch");
+	if (arr[num].type == dinner)
+		printf("\nType: Dinner");
 }
 
 void printRecipeHowTo(RECIPE arr[], int num)
 {
 	//print
 	printf("\nPrep-time: %d", arr[num].cook.preptime);
-	printf("\n\nCook-time: %d", arr[num].cook.cooktime);
-	printf("\n\nReady-time: %d", arr[num].cook.readytime);
-	printf("\n\nTemprature: %d", arr[num].cook.temp);
-	printf("\n\nCookMethod: %s", arr[num].cook.method);
+	printf("\nReadyIn time: %d", arr[num].cook.readytime);
+	printf("\nCook time: %d", arr[num].cook.cooktime);
+	printf("\nTemprature: %d", arr[num].cook.temp);
+	printf("\nCookMethod: %s", arr[num].cook.method);
 }
 
 void printRecipeIngredients(RECIPE arr[], int num)
