@@ -16,7 +16,7 @@
 void printRecipeSimple(RECIPE arr[], int num)
 {
 	//print
-	printf("\n %d: %s, $%d", arr[num].id, arr[num].recipeName, arr[num].price);
+	printf("\n%d: %s, $%d", arr[num].id, arr[num].recipeName, arr[num].price);
 
 	//any enum ids under here:  
 

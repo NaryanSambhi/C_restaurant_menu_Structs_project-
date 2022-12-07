@@ -18,8 +18,7 @@
 #include "MainFunctions.h"
 #include "Recipe.h"
 #include "printFunctions.h"
-
-#define FIRST_RECIPE_NUM 1  //to define where first recipe starts (instead of 0)
+#include "GetRecipesFromUser.h"
 
 //display recipes
 
@@ -109,8 +108,18 @@ void addRecipe(RECIPE arr[], int num)
 	listEmpty(arr, num);
 
 	//grab input
-	int recipe = GetEmptyRecipe(arr, num);
+	int recipe = NumOnly(arr, num);
 
+	GetRecipeName(arr, recipe);
+
+	printf("Insert price: ");
+	scanf("%d", &arr[recipe].price);
+
+	printRecipeSimple(arr, recipe);
+
+	arr[recipe].status = true; //flag status to taken 
+
+	
 
 		//CONFRIM DETAILS
 		//print confirm
@@ -145,11 +154,12 @@ void deleteRecipe(RECIPE arr[], int num)
 	listTaken(arr, num); //lists taken recipes that can be deleted
 
 	//grab input
-	int recipe = GetTakenRecipe(arr, num);
+	int recipe = NumOnly(arr, num);
 
 	///CONFIRM
 	printf("\n\nCONFIRM DETAILS:\n");
-	printRecipeSimple(arr, recipe - FIRST_RECIPE_NUM);
+
+	printRecipeSimple(arr, recipe);
 
 	//get input
 	printf("\nEnter 'y' to confirm or 'n' to cancel: ");
@@ -157,7 +167,7 @@ void deleteRecipe(RECIPE arr[], int num)
 	if (ch == 'y')
 	{
 		printf("\nRecipe Deleted\n");
-		arr[recipe - FIRST_RECIPE_NUM].status = false; //flag seat status to empty -> does not delete data, only flags for overwriting  
+		arr[recipe].status = false; //flag seat status to empty -> does not delete data, only flags for overwriting  
 	}
 	else
 		printf("\nDeletion Cancelled\n");
@@ -182,9 +192,9 @@ void displaySingleRecipe(RECIPE arr[], int num)
 	int recipe = GetTakenRecipe(arr, num);
 
 //DISPLAY COMPLEX INFROMATION FOR SINGLE SELECTED RECIPE
-	printRecipeSimple(arr, recipe - FIRST_RECIPE_NUM);
-	printRecipeHowTo(arr, recipe - FIRST_RECIPE_NUM);
-	printRecipeIngredients(arr, recipe - FIRST_RECIPE_NUM);
+	printRecipeSimple(arr, recipe);
+	printRecipeHowTo(arr, recipe);
+	printRecipeIngredients(arr, recipe);
 
 }
 

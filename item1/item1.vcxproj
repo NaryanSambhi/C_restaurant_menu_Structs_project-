@@ -130,7 +130,7 @@
   <ItemGroup>
     <ClCompile Include="source.c" />
     <ClCompile Include="GetRecipeFromUser.c" />
-    <ClCompile Include="GetRecipesFromUser.c" />
+    <ClCompile Include="GetRecipesFromUser.h" />
     <ClCompile Include="MainFunctions.c" />
     <ClCompile Include="generalFunctions.c" />
     <ClCompile Include="printFunctions.c" />

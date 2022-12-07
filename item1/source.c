@@ -63,7 +63,7 @@ int main(void)
 	FILE* fp;
 	size_t size = sizeof(RECIPE);
 
-	RECIPE menu[MENUSIZE] = { 0 };
+	RECIPE menu[MENUSIZE];
 
 //if no contents detected:
 
@@ -114,7 +114,7 @@ int main(void)
 	}
 	
 	//save to file function here 
-	if ((fp = fopen("breakfastMenu.dat", "w")) == NULL)
+	if ((fp = fopen("menu.dat", "w")) == NULL)
 		printf("SAVE FAILURE");
 	else //write to file
 	{

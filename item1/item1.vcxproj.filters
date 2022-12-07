@@ -33,14 +33,14 @@
     <ClCompile Include="printFunctions.c">
       <Filter>Source Files\FUNCTIONS</Filter>
     </ClCompile>
-    <ClCompile Include="GetRecipesFromUser.c">
+    <ClCompile Include="GetRecipesFromUser.h">
       <Filter>Header Files\FUNCTIONS</Filter>
     </ClCompile>
     <ClCompile Include="PrintMenus.c">
       <Filter>Source Files\FUNCTIONS</Filter>
     </ClCompile>
     <ClCompile Include="source.c">
-      <Filter>Source Files\FUNCTIONS</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -3,8 +3,8 @@
 #include "MainFunctions.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-#define FIRST_RECIPE_NUM 1  //to define where first recipe starts (instead of 0)
 #define OFFSET 2 //includes null, etc
 
 
@@ -23,16 +23,16 @@ void GetRecipeName(RECIPE arr[], int recipe)
 {
 	//grab first name
 	printf("\nPlease enter the name of the recipe: ");
-	fgets(arr[recipe - FIRST_RECIPE_NUM].recipeName, MAX, stdin);
+	fgets(arr[recipe].recipeName, MAX, stdin);
 
-	if (strlen(arr[recipe - FIRST_RECIPE_NUM].recipeName) > MAX - OFFSET) //checking for garbage
+	if (strlen(arr[recipe].recipeName) > MAX - OFFSET) //checking for garbage
 	{															//-1 includes NULL terminator
 		printf("\n\nOVERFLOW ERROR\n\n");
 		exit(EXIT_FAILURE);
 	}
 
 	//gets rid of new line from fgets
-	arr[recipe - FIRST_RECIPE_NUM].recipeName[strcspn(arr[recipe - FIRST_RECIPE_NUM].recipeName, "\n")] = 0;
+	arr[recipe].recipeName[strcspn(arr[recipe].recipeName, "\n")] = 0;
 }
 
 
@@ -45,38 +45,36 @@ void GetRecipeName(RECIPE arr[], int recipe)
 
 void GetPrepTime(RECIPE arr[], int num)
 {
-    printf("\nPlease enter prep-time: ");
-    NumOnly(arr[num - FIRST_RECIPE_NUM].cook.preptime);
 }
+
 void GetCookTime(RECIPE arr[], int num)
 {
-    printf("\nPlease enter cook-time: ");
-    NumOnly(arr[num - FIRST_RECIPE_NUM].cook.cooktime);
 }
 void GetReadyTime(RECIPE arr[], int num)
 {
-    printf("\nPlease enter ready-time: ");
-    NumOnly(arr[num - FIRST_RECIPE_NUM].cook.readytime);
+   
+
 }
 void GetTemprature(RECIPE arr[], int num)
 {
-    printf("\nPlease enter temprature: ");
-    NumOnly(arr[num - FIRST_RECIPE_NUM].cook.temp);
+ 
+
 }
+
 void GetCookMethod(RECIPE arr[], int recipe)
 {
 	//grab first name
 	printf("\nPlease enter cooking method: ");
-	fgets(arr[recipe - FIRST_RECIPE_NUM].cook.method, MAX, stdin);
+	fgets(arr[recipe].cook.method, MAX, stdin);
 
-	if (strlen(arr[recipe - FIRST_RECIPE_NUM].cook.method) > MAX - OFFSET) //checking for garbage
+	if (strlen(arr[recipe].cook.method) > MAX - OFFSET) //checking for garbage
 	{															//-1 includes NULL terminator
 		printf("\n\nOVERFLOW ERROR\n\n");
 		exit(EXIT_FAILURE);
 	}
 
 	//gets rid of new line from fgets
-	arr[recipe - FIRST_RECIPE_NUM].cook.method[strcspn(arr[recipe - FIRST_RECIPE_NUM].cook.method, "\n")] = 0;
+	arr[recipe].cook.method[strcspn(arr[recipe].cook.method, "\n")] = 0;
 }
 
 void GetCookAll(RECIPE arr[], int num)

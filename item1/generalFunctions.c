@@ -1,9 +1,6 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 
-#define FIRST_RECIPE_NUM 1  //to define where first recipe starts (instead of 0)
-
-
 // --------------------------------------------------------------------------------------
 // PROG71985 - F22																	   //
 // GROUP PROJECT - DEC 2022															   //
@@ -26,17 +23,16 @@ void listTaken(RECIPE arr[], int num)
 	for (int i = 0; i < num; i++)
 	{
 		if (arr[i].status == true) //taken
-			printf(" %d  ", arr[i].id + FIRST_RECIPE_NUM);
+			printf(" %d  ", arr[i].id);
 	}
 }
-
 //lists all recipes flagged as false (empty)
 void listEmpty(RECIPE arr[], int num)
 {
 	for (int i = 0; i < num; i++)
 	{
 		if (arr[i].status == false) //empty
-			printf(" %d  ", arr[i].id + FIRST_RECIPE_NUM); 
+			printf(" %d  ", arr[i].id); 
 	}
 }
 
@@ -87,7 +83,7 @@ int NumOnly(int num)
 	int input;
 
 	//hard rejecting garbage in -> could improve to ask for correct input
-	if (scanf("%d", &input) != 1 || input > num || input <= 0)
+	if (scanf("%d", &input) != 1) 
 	{
 		printf("Invalid Input Error \n");
 		exit(EXIT_FAILURE);
@@ -106,7 +102,7 @@ int GetTakenRecipe(RECIPE arr[], int num)
 	int recipe;
 	recipe = NumOnly(num);
 
-	while (arr[recipe - FIRST_RECIPE_NUM].status == false) //ensures only taken recipes can be accessed
+	while (arr[recipe].status == false) //ensures only taken recipes can be accessed
 	{
 		printf("\nRecipe is empty\n");
 		listTaken(arr, num);
@@ -120,7 +116,7 @@ int GetEmptyRecipe(RECIPE arr[], int num)
 	int recipe;
 	recipe = NumOnly(num);
 
-	while (arr[recipe - FIRST_RECIPE_NUM].status == true) //ensures only non-taken recipes can be accessed
+	while (arr[recipe].status == true) //ensures only non-taken recipes can be accessed
 	{
 		printf("\nRecipe is taken\n");
 		listEmpty(arr, num);

@@ -48,7 +48,7 @@ typedef struct recipe
 	bool status; //acts as a flag to when slot is written in or not
 
 //lower level
-	INGREDIENTS ingredients;
+	//INGREDIENTS ingredients;
 	COOK cook;
 
 }RECIPE;
