@@ -19,28 +19,35 @@
 #define MAX 20
 
 //how to cook
-typedef struct cook {
+typedef struct cook 
+{
 	int preptime;
 	int cooktime;
 	int readytime;
 	int temp;
-	enum COOKINGMETHOD { bake, grill, microwave, frying } cookingmethod; //add more here 
+	char method[MAX];
 }COOK;
 
 //ingredients
-typedef struct ingredients {
+typedef struct ingredients 
+{
 	char name[MAX];
 	int num;
 }INGREDIENTS;
 
 //recipe top layer struct
-typedef struct recipe {
-
+typedef struct recipe 
+{
+//upper level
 	int id; //numer of item in list of slots 0-5
 	char recipeName[MAX];
 	int price; 
+	enum TYPE {breakfast, lunch, dinner} type;
+
+
 	bool status; //acts as a flag to when slot is written in or not
 
+//lower level
 	INGREDIENTS ingredients;
 	COOK cook;
 

@@ -1,5 +1,4 @@
 
-
 // ------------------------------------------------------------------------------------//
 // PROG71985 - F22																	   //
 // GROUP PROJECT - DEC 2022															   //
@@ -43,39 +42,84 @@
 
 ///////////// PROGRAM /////////////
 
+
 #define _CRT_SECURE_NO_WARNINGS
 
-#include <stdbool.h>
 #include <stdio.h>
+#include <stdbool.h>
 #include <stdlib.h>
 
-#include "Meals.h"
+#include "Recipe.h"
+#include "MainFunctions.h"
 #include "PrintMenus.h"
 
-//main
+#define MENUSIZE 24 //LIMITED AS AIMED FOR CULINARY BUSINESSES
+
+
+//FUNCTION
 int main(void)
 {
-	//menu
-	bool continueProgram1 = true;
-	while (continueProgram1)
+
+	FILE* fp;
+	size_t size = sizeof(RECIPE);
+
+	RECIPE menu[MENUSIZE] = { 0 };
+
+//if no contents detected:
+
+	if ((fp = fopen("menu.dat", "r")) == NULL)
 	{
+		for (int i = 0; i < MENUSIZE; i++) //creating 12 (empty) seats
+		{
+			menu[i].status = false; //false == empty / false == 0
+			menu[i].id = i; //id of position
+		}
+	}
+	else //else, if file detected, read status of seats and close
+	{
+		fread(menu, size, MENUSIZE, fp);
+		fclose(fp);
+	}
+
+
+//MENU 
+	bool continueProgram = true;
+	while (continueProgram) {
+
 		char choice = printmenuMain();
+
 		switch (choice)
 		{
-		case 'a': breakfast();
+		case 'a': searchRecipe(menu, MENUSIZE);
 			break;
-		case 'b': lunch();
+		case 'b': displayAllRecipes(menu, MENUSIZE);
 			break;
-		case 'c': dinner();
+		case 'c': recipeRange(menu, MENUSIZE);
 			break;
-		case'q': continueProgram1 = false;
+		case 'd': displaySingleRecipe(menu, MENUSIZE);
 			break;
-		default: printf("invalid");
+		case 'e': addRecipe(menu, MENUSIZE);
+			break;
+		case 'f': deleteRecipe(menu, MENUSIZE);
+			break;
+		case 'g': updateRecipe(menu, MENUSIZE);
+			break;
+		case 'h':
+			continueProgram = false; 
+			break;
+		default:
+			printf("\ninvalid entry\n"); 
 			break;
 		}
 	}
+	
+	//save to file function here 
+	if ((fp = fopen("breakfastMenu.dat", "w")) == NULL)
+		printf("SAVE FAILURE");
+	else //write to file
+	{
+		fwrite(menu, size, MENUSIZE, fp);
+		fclose(fp);
+	}
 
-	//exit message
-	printf("\nThank you for using Menu Manager\n");
-	exit(EXIT_SUCCESS);
 }

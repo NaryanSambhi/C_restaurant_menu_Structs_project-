@@ -14,10 +14,4 @@
 
 ////////// MENUS //////////
 
-char printmenuBreakfast(void);
-
-char printmenuLunch(void);
-
-char printmenuDinner(void);
-
 char printmenuMain(void);

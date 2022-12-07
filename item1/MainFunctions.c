@@ -34,7 +34,7 @@ void displayAllRecipes(RECIPE arr[], int num)
 	bool emp = NoRecipes(arr, num);
 	if (emp == true)
 	{
-		printf("\n\nNo Recipes detected\n\n");
+		printf("\nNo Recipes detected\n");
 		return;
 	}
 	//else
@@ -138,7 +138,7 @@ void deleteRecipe(RECIPE arr[], int num)
 	bool emp = NoRecipes(arr, num);
 	if (emp == true)
 	{
-		printf("\nNo recipes assigned yet");
+		printf("\nNo recipes assigned yet\n");
 		return;
 	}
 
@@ -171,7 +171,7 @@ void displaySingleRecipe(RECIPE arr[], int num)
 	bool emp = NoRecipes(arr, num);
 	if (emp == true)
 	{
-		printf("\n\nNo Recipes detected\n\n");
+		printf("\nNo Recipes detected\n");
 		return;
 	}
 

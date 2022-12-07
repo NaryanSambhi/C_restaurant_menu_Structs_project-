@@ -4,7 +4,6 @@
 #define FIRST_RECIPE_NUM 1  //to define where first recipe starts (instead of 0)
 
 
-
 // --------------------------------------------------------------------------------------
 // PROG71985 - F22																	   //
 // GROUP PROJECT - DEC 2022															   //
@@ -15,6 +14,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 #include "Recipe.h"
 
@@ -128,41 +128,3 @@ int GetEmptyRecipe(RECIPE arr[], int num)
 		recipe = NumOnly(num);
 	}
 }
-
-
-
-
-/*
-//get string
-void GetUserInputForRecipe(RECIPE arr[], int numrecipe) {
-
-	//void get recipename
-	char recipename[NAMELEN];
-
-	printf("Enter the name for the recipe: ");
-
-	fgets(recipename, NAMELEN, stdin);
-
-	if (strlen[arr[recipename].recipename] > MAX - OFFSET) {
-
-		printf("Overflow error");
-		exit(EXIT_FAILURE);
-	}
-
-	//function call of the remove new line where it will remove the new line created by fgets 
-	removeNewLine(recipename);
-
-	printf("\n");
-
-}
-// removes the newline created by fgets
-void removeNewLine(char input[]) {
-
-	// loops thorugh the length of the string that is inputed, then takes that newline and makes it into a null terminator, thus forcing c to end the null terminator and not display it 
-	for (int i = 0; i < strlen(input); i++) {
-		if (input[i] == '\n') {
-			input[i] = '\0';
-		}
-	}
-}
-*/

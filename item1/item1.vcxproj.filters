@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\FOOD-MENUS">
-      <UniqueIdentifier>{ffcac844-8cc3-4b5b-abf3-120d2e35a497}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\FUNCTIONS">
       <UniqueIdentifier>{f9c2eea9-ab56-4fb6-9bb9-02ad6293f90a}</UniqueIdentifier>
     </Filter>
@@ -24,18 +21,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Breakfast.c">
-      <Filter>Source Files\FOOD-MENUS</Filter>
-    </ClCompile>
-    <ClCompile Include="Dinner.c">
-      <Filter>Source Files\FOOD-MENUS</Filter>
-    </ClCompile>
-    <ClCompile Include="Lunch.c">
-      <Filter>Source Files\FOOD-MENUS</Filter>
-    </ClCompile>
     <ClCompile Include="generalFunctions.c">
       <Filter>Source Files\FUNCTIONS</Filter>
     </ClCompile>
@@ -52,6 +37,9 @@
       <Filter>Header Files\FUNCTIONS</Filter>
     </ClCompile>
     <ClCompile Include="PrintMenus.c">
+      <Filter>Source Files\FUNCTIONS</Filter>
+    </ClCompile>
+    <ClCompile Include="source.c">
       <Filter>Source Files\FUNCTIONS</Filter>
     </ClCompile>
   </ItemGroup>

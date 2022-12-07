@@ -15,6 +15,7 @@
 
 /////////// GET RECIPE ///////////
 
+void GetRecipeName(RECIPE arr[], int recipe);
 
 
 
@@ -35,3 +36,6 @@ void GetTemprature(RECIPE arr[], int num);
 void GetCookMethod(RECIPE arr[], int num);
 
 void GetCookAll(RECIPE arr[], int num);
+
+void GetCookMethod(RECIPE arr[], int recipe);
+
