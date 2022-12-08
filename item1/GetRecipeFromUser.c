@@ -107,13 +107,17 @@ void GetIngredients(RECIPE arr[], int num)
 	// it prints the number they entered and prompts user to enter the actual ingredeints
 	printf("Enter %d ingredents for the ingredients list: \n", userLimit);
 	for (int i = 0; i < userLimit; i++)
-		scanf_s("%s", ingredients[i], MAX);
+		scanf_s("%s", arr[num].ingredients[i][i].name, MAX);
+
 
 	//print statement to check the ingredeients that was entered 
 	printf("The ingredients you inputed was:\n");
 
 	for (int i = 0; i < userLimit; i++) {
-		printf("%s\n", ingredients[i]);
+		//printf("%s\n", ingredients[i]);
+
+		printf("%s\n", arr[num].ingredients[i][i].name);
+
 	}
 	
 }

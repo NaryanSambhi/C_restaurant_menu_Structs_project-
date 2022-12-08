@@ -16,7 +16,7 @@
 
 // typedef struct to store the recipes, and the other two structs Ingredients, and cooking 
 
-#define MAX 100
+#define MAX 20
 
 //how to cook
 typedef struct cook 
@@ -50,7 +50,7 @@ typedef struct recipe
 	bool status; //acts as a flag to when slot is written in or not
 
 //lower level
-	INGREDIENTS ingredients;
+	INGREDIENTS ingredients[MAX][MAX];
 	COOK cook;
 
 }RECIPE;
