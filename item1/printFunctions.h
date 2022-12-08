@@ -13,8 +13,10 @@
 
 //prints the recipes based on the user input
 void printRecipeSimple(RECIPE arr[], int num); 
-
 void printRecipeHowTo(RECIPE arr[], int num); 
+void printRecipeIngredients(RECIPE arr[], int num); 
 
-void printRecipeIngredients(RECIPE arr[], int num); //unimplemented
+//prints all
+void PRINTALL(RECIPE arr[], int num);
+
 

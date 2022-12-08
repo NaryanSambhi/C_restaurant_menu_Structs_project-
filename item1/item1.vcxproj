@@ -139,7 +139,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainFunctions.h" />
-    <ClInclude Include="Meals.h" />
     <ClInclude Include="printFunctions.h" />
     <ClInclude Include="PrintMenus.h" />
     <ClInclude Include="Recipe.h" />

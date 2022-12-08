@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include "printFunctions.h"
 
+#define MAXNUMBEROFINGREDIENTS 10
+
 // --------------------------------------------------------------------------------------
 // PROG71985 - F22																	   //
 // GROUP PROJECT - DEC 2022															   //
@@ -39,10 +41,21 @@ void printRecipeHowTo(RECIPE arr[], int num)
 void printRecipeIngredients(RECIPE arr[], int num)
 {
 	//add bool function to flag if an ingredient slot is taken and prints it out 
-	printf("\nINGREDIENTS: \n");
-	///*for (int i = 0; i < num; i++) {
-	//	printf("\nIngredient List: %s", arr[num].ingredients[i][i].name);*/
-	//}
+	printf("\n\nINGREDIENTS:\n");
+	
+	for (int i = 0; i < MAXNUMBEROFINGREDIENTS; i++)
+	{
+		if (arr[num].ingredients[i][i].status == true)
+			printf("\n%s", arr[num].ingredients[i][i].name);
+	}
 }
 
-//void printRecipeComplex(RECIPE arr[], int num)
+///////ALL
+
+void PRINTALL(RECIPE arr[], int num)
+{
+	printRecipeSimple(arr, num);
+	printRecipeIngredients(arr, num);
+	printRecipeHowTo(arr, num);
+	printf("\n");
+}

@@ -10,13 +10,10 @@
 //																					   //
 // --------------------------------------------------------------------------------------
 
-
-
 #include <stdbool.h>
 
-// typedef struct to store the recipes, and the other two structs Ingredients, and cooking 
-
 #define MAX 20
+#define MAXNUMBEROFINGREDIENTS 10
 
 //how to cook
 typedef struct cook 
@@ -32,7 +29,6 @@ typedef struct cook
 typedef struct ingredients 
 {
 	char name[MAX];
-	int num;
 	bool status;
 
 }INGREDIENTS;
@@ -50,7 +46,7 @@ typedef struct recipe
 	bool status; //acts as a flag to when slot is written in or not
 
 //lower level
-	INGREDIENTS ingredients[MAX][MAX];
+	INGREDIENTS ingredients[MAXNUMBEROFINGREDIENTS][MAX];
 	COOK cook;
 
 }RECIPE;

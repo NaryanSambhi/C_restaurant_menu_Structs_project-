@@ -21,7 +21,7 @@ void recipeRange(RECIPE arr[], int num); //unimplemented
 
 void displaySingleRecipe(RECIPE arr[], int num); 
 
-void addRecipe(RECIPE arr[], int num); //unimplemented
+void addRecipe(RECIPE arr[], int num); 
 
 void deleteRecipe(RECIPE arr[], int num); 
 

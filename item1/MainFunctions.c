@@ -80,12 +80,8 @@ void searchRecipe(RECIPE arr[], int num)
 			char ch = getchar();
 			if (ch == 'y')
 			{
-				printRecipeHowTo(arr, i);
-				printRecipeIngredients(arr, i);
+				PRINTALL(arr, i);
 			}
-			else
-				continue; //may be redundent
-
 			return;
 		}
 	}
@@ -119,28 +115,14 @@ void addRecipe(RECIPE arr[], int num)
 	}
 
 
-//////////////////////////////////////////////////////////
+//get recipes
+	GETALL(arr, recipe);
 
-	GetRecipeAll(arr, recipe);
-
-	GetIngredients(arr, recipe);
-
-	GetCookAll(arr, recipe);
-
-
-//CONFRIM
+    //CONFRIM
 	printf("\n\nCONFIRM DETAILS:\n");
 
-	printRecipeSimple(arr, recipe);
-
-	printRecipeIngredients(arr, recipe);
-
-
-	printRecipeHowTo(arr, recipe);
-
-
-//////////////////////////////////////////////////////////
-
+	//print
+	PRINTALL(arr, recipe);
 
 	//get input
 	printf("\n\n\nEnter 'y' to confirm or 'n' to cancel: ");
@@ -219,10 +201,8 @@ void displaySingleRecipe(RECIPE arr[], int num)
 		return;
 	}
 
-//DISPLAY COMPLEX INFROMATION FOR SINGLE SELECTED RECIPE
-	printRecipeSimple(arr, recipe);
-	printRecipeHowTo(arr, recipe);
-	printRecipeIngredients(arr, recipe);
+//print complex info
+	PRINTALL(arr, recipe);
 
 }
 
