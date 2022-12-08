@@ -110,15 +110,15 @@ void GetIngredients(RECIPE arr[], int num)
 		scanf_s("%s", arr[num].ingredients[i][i].name, MAX);
 
 
-	//print statement to check the ingredeients that was entered 
-	printf("The ingredients you inputed was:\n");
+	////print statement to check the ingredeients that was entered 
+	//printf("The ingredients you inputed was:\n");
 
-	for (int i = 0; i < userLimit; i++) {
-		//printf("%s\n", ingredients[i]);
+	//for (int i = 0; i < userLimit; i++) {
+	//	//printf("%s\n", ingredients[i]);
 
-		printf("%s\n", arr[num].ingredients[i][i].name);
+	//	printf("%s\n", arr[num].ingredients[i][i].name);
 
-	}
+	//}
 	
 }
 

@@ -42,6 +42,9 @@
     <ClCompile Include="source.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="mohammed.c">
+      <Filter>Source Files\FUNCTIONS</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Meals.h">

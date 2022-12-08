@@ -38,9 +38,11 @@ void printRecipeHowTo(RECIPE arr[], int num)
 
 void printRecipeIngredients(RECIPE arr[], int num)
 {
-
-
-
+	//add bool function to flag if an ingredient slot is taken and prints it out 
+	printf("\nINGREDIENTS: \n");
+	///*for (int i = 0; i < num; i++) {
+	//	printf("\nIngredient List: %s", arr[num].ingredients[i][i].name);*/
+	//}
 }
 
 //void printRecipeComplex(RECIPE arr[], int num)

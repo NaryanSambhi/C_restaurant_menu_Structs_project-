@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="mohammed.c" />
     <ClCompile Include="source.c" />
     <ClCompile Include="GetRecipeFromUser.c" />
     <ClCompile Include="GetRecipesFromUser.h" />
