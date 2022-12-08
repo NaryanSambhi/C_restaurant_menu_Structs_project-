@@ -7,6 +7,7 @@
 #include <string.h>
 
 #define OFFSET 2 //includes null, etc
+#define MAXNUMBEROFINGREDIENTS   10
 
 
 // --------------------------------------------------------------------------------------
@@ -93,8 +94,28 @@ void GetRecipeAll(RECIPE arr[], int num)
 
 
 void GetIngredients(RECIPE arr[], int num)
-{
+{   
+	//array inside an array, first number of ingredents which can only be 10, and the max of each ingredient item which can be 100 characters to be safe
+	char ingredients[MAXNUMBEROFINGREDIENTS][MAX];
+	//the limit the user enters 
+	int userLimit;
 
+	//users enters the number of ingredients
+	printf("Enter the number of ingredients for the recipe:");
+	scanf_s("%d", &userLimit);
+
+	// it prints the number they entered and prompts user to enter the actual ingredeints
+	printf("Enter %d ingredents for the ingredients list: \n", userLimit);
+	for (int i = 0; i < userLimit; i++)
+		scanf_s("%s", ingredients[i], MAX);
+
+	//print statement to check the ingredeients that was entered 
+	printf("The ingredients you inputed was:\n");
+
+	for (int i = 0; i < userLimit; i++) {
+		printf("%s\n", ingredients[i]);
+	}
+	
 }
 
 

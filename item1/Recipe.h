@@ -16,7 +16,7 @@
 
 // typedef struct to store the recipes, and the other two structs Ingredients, and cooking 
 
-#define MAX 20
+#define MAX 100
 
 //how to cook
 typedef struct cook 
