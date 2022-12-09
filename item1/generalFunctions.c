@@ -1,7 +1,6 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 
-
 // --------------------------------------------------------------------------------------
 // PROG71985 - F22																	   //
 // GROUP PROJECT - DEC 2022															   //
@@ -19,18 +18,19 @@
 
 /////////// MAIN SUPPORTING FUNCTIONS ///////////
 
-//lists all recipes flagged as true (taken )
+//lists all recipes flagged as true (taken)
 void listTaken(RECIPE arr[], int num)
-{   //loops 24 times and prints it out 
+{   //loop count taken data
 	for (int i = 0; i < num; i++)
 	{
 		if (arr[i].status == true) //taken
 			printf("%d  ", arr[i].id);
 	}
 }
+
 //lists all recipes flagged as false (empty)
 void listEmpty(RECIPE arr[], int num)
-{   //loops 24 times and prints it out 
+{   //loop count empty data
 	for (int i = 0; i < num; i++)
 	{
 		if (arr[i].status == false) //empty
@@ -50,14 +50,12 @@ bool NoRecipes(RECIPE arr[], int num)
 			count++;
 	}
 	if (count == num)
-		return true;
+		return true; //if as many empty as there are slots return all empty
 	else
 		return false;
 
 }
 
-//bool for when full or empty logic is required
-		//only used once, added for future reusability sake
 bool FullRecpies(RECIPE arr[], int num)
 {
 	int count = 0;
@@ -67,7 +65,7 @@ bool FullRecpies(RECIPE arr[], int num)
 		if (arr[i].status == true) //if a recipe is flagged as taken add to final count
 			count++;
 	}
-	if (count == num)
+	if (count == num) // if as many full as there are slots return all as full
 		return true;
 	else
 		return false;
@@ -78,8 +76,6 @@ bool FullRecpies(RECIPE arr[], int num)
 /////////////// SAFE GETS ///////////////
 
 //get num only
-
-//ensures num input only 
 int NumOnly(int num)
 {
 	int input;
@@ -91,15 +87,16 @@ int NumOnly(int num)
 		exit(EXIT_FAILURE);
 	}
 	//if the userinput is above the size of the menu or under zero then it will exit the program 
-	if (input > MENUSIZE - 1 || input < 0) {
+	if (input > MENUSIZE - 1 || input < 0) //-1 to account for 0 in array
+	{ 
 
 		printf("Invalid Input Error \n");
 		exit(EXIT_FAILURE);
 	}
 
-	//discard new line for fgets
+	//discard new line for getchar
 	int c;
-	((c = getchar()) != '\n' && c != EOF); //ensure new line and white space from scanf isnt added to fgets functions
+	((c = getchar()) != '\n' && c != EOF); //ensure new line and white space isnt added to getchar prompts
 
 	return input;
 }

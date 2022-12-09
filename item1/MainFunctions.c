@@ -21,15 +21,12 @@
 #include "GetRecipesFromUser.h"
 #include "PrintMenus.h"
 
-//display recipes
-
 
 /////////// MAIN ///////////
 
 //displays all the recipe for the user to pick from the list
 void displayAllRecipes(RECIPE arr[], int num)
 {
-	
 	//RETURN IF NO RECIPES FOUND
 	bool empty = NoRecipes(arr, num);
 	if (empty == true)
@@ -45,7 +42,6 @@ void displayAllRecipes(RECIPE arr[], int num)
 			printRecipeSimple(arr, i);
 		}
 	}
-
 }
 
 //searches for the specfic recipe based on the user input 
@@ -74,6 +70,8 @@ void searchRecipe(RECIPE arr[], int num)
 		{
 			printf("\nRecipe Found:\n\n");
 	
+			//print all details
+			printf("RECIPE:\n");
 			PRINTALL(arr, i);
 			
 			return;
@@ -81,9 +79,6 @@ void searchRecipe(RECIPE arr[], int num)
 	}
 	printf("\nRecipe Not Found\n");
 }
-
-
-//manage recipes
 
 //adds a recipe to the list
 void addRecipe(RECIPE arr[], int num)
@@ -95,13 +90,12 @@ void addRecipe(RECIPE arr[], int num)
 		printf("\nAll recipe slots occupied");
 		return;
 	}
-
+	//else
 	//list recipe slots that can be written into
 	listEmpty(arr, num);
 
-	printf("\n\nPlease select a free menu slot to assign the recipe: ");
-
 	//grab input from the user 
+	printf("\n\nPlease select a free menu slot to assign the recipe: ");
 	int recipe = NumOnly(arr, num);
 	if (arr[recipe].status == true)
 	{
@@ -113,20 +107,20 @@ void addRecipe(RECIPE arr[], int num)
 	//get recipes
 	GETALL(arr, recipe);
 
-	//CONFRIM
-	printf("\n\nCONFIRM DETAILS:\n");
+//CONFRIM
+	printf("\n\nCONFIRM DETAILS:\n\n");
 
-	//print
+	//print all to confirm
+	printf("RECIPE: \n");
 	PRINTALL(arr, recipe);
-
-	//get input
 	printf("\n\n\nEnter 'y' to confirm or 'n' to cancel: ");
 
+	//user confirms or rejects
 	char ch = getchar();
 	if (ch == 'y')
 	{
 		printf("\nRecipe Created\n\n");
-		arr[recipe].status = true; //flag status to taken 
+		arr[recipe].status = true; //flag status to taken - can be read and cant be overwritten
 	}
 	else //if the user types n to cancel then it will cancel the process
 		printf("\nRecipe Creation Cancelled\n\n");
@@ -144,11 +138,10 @@ void deleteRecipe(RECIPE arr[], int num)
 		return;
 	}
 
+	//get input
 	printf("Please choose which recipe to delete \n");
 	listTaken(arr, num); //lists taken recipes that can be deleted
-
 	printf("\n");
-	//grab input
 	int recipe = NumOnly(arr, num);
 	if (arr[recipe].status == false)
 	{
@@ -156,9 +149,11 @@ void deleteRecipe(RECIPE arr[], int num)
 		return;
 	}
 
-	///CONFIRM
-	printf("\n\nCONFIRM DETAILS:\n");
+///CONFIRM
+	printf("\n\nCONFIRM DETAILS:\n\n");
 
+	//confirm correct recipe
+	printf("RECIPE:\n");
 	printRecipeSimple(arr, recipe);
 
 	//get input
@@ -167,18 +162,15 @@ void deleteRecipe(RECIPE arr[], int num)
 	if (ch == 'y')
 	{
 		printf("\nRecipe Deleted\n");
-		arr[recipe].status = false; //flag seat status to empty -> does not delete data, only flags for overwriting  
+		arr[recipe].status = false; //flag recipe status to empty -> does not delete data, only flags for overwriting  
 	}
 	else
-		// if the user decides not to delete a recipe this message would output
 		printf("\nDeletion Cancelled\n");
-
 }
 
 // displays the single recipe 
 void displaySingleRecipe(RECIPE arr[], int num)
 {
-
 	//RETURN IF NO RECIPES FOUND
 	bool empty = NoRecipes(arr, num);
 	if (empty == true)
@@ -201,13 +193,13 @@ void displaySingleRecipe(RECIPE arr[], int num)
 	}
 
 	//print complex info using the print all function
+	printf("RECIPE:\n");
 	PRINTALL(arr, recipe);
 
 }
 
 void recipeRange(RECIPE arr[], int num)
 {
-
 	//check if there are recipe slots taken yet
 	bool emp = NoRecipes(arr, num);
 	if (emp == true)
@@ -216,10 +208,9 @@ void recipeRange(RECIPE arr[], int num)
 		return;
 	}
 
-	//get recipe to modify
+	//get range choice
 	printf("Please select which recipe range to view: \n");
 
-	//start function
 	bool continueProgram = true;
 	while (continueProgram) {
 
@@ -227,14 +218,13 @@ void recipeRange(RECIPE arr[], int num)
 		switch (choice)
 		{
 		case 'a': Breakfast(arr, num);
-			printf("\n");
-
+				  printf("\n");
 			break;
 		case 'b': Lunch(arr, num);
-			printf("\n");
+		          printf("\n");
 			break;
 		case 'c': Dinner(arr, num);
-			printf("\n");
+			      printf("\n");
 			break;
 		case 'd':
 			continueProgram = false;
@@ -274,7 +264,7 @@ void updateRecipe(RECIPE arr[], int num)
 		printf("\nRecipe slot empty\n");
 		return;
 	}
-
+	printf("RECIPE:\n");
 	PRINTALL(arr, recipe);
 
 //start function
@@ -300,10 +290,10 @@ void updateRecipe(RECIPE arr[], int num)
 	}
 
 }
-
+//////////// SUB MENUS FOR MODIFY SUB ////////////
+//modify cook sub
 void modifyCook(RECIPE arr[], int recipe )
 {
-	recipe = 1;
 	bool continueProgram = true;
 	while (continueProgram) {
 
@@ -318,7 +308,7 @@ void modifyCook(RECIPE arr[], int recipe )
 			break;								
 		case 'd': GetTemprature(arr, recipe);
 			break;										
-		case 'e': GetCookMethod(arr, recipe); // not working
+		case 'e': GetCookMethod(arr, recipe); 
 			break;
 		case 'f':
 			continueProgram = false;
@@ -330,10 +320,9 @@ void modifyCook(RECIPE arr[], int recipe )
 	}
 }
 
-
+//modify ingredients sub
 void modifyIngredients(RECIPE arr[], int recipe)
 {
-	recipe = 1;
 	bool continueProgram = true;
 	while (continueProgram) {
 
@@ -353,20 +342,18 @@ void modifyIngredients(RECIPE arr[], int recipe)
 
 }
 
+//modify recipe (upper level data) sub
 void modifyRecipe(RECIPE arr[], int recipe)
 {
-
-	recipe = 1;
-
 	bool continueProgram = true;
 	while (continueProgram) {
 
 		char choice = printUpdateRecipeMenu();
 		switch (choice)
 		{
-		case 'a': GetMealType(arr, recipe); // not working
+		case 'a': GetMealType(arr, recipe);  
 			break;
-		case 'b': GetRecipeName(arr, recipe); // not working
+		case 'b': GetRecipeName(arr, recipe);  
 			break;
 		case 'c': GetPrice(arr, recipe); 
 			break;
