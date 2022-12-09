@@ -236,23 +236,24 @@ void updateRecipe(RECIPE arr[], int num)
 
 }
 
-void modifyCook(RECIPE arr[], int num)
+void modifyCook(RECIPE arr[], int recipe )
 {
+	recipe = 1;
 	bool continueProgram = true;
 	while (continueProgram) {
 
 		char choice = printUpdateHowToCookMenu();
 		switch (choice)
 		{
-		case 'a': GetPrepTime(arr, num);  //--------------------
-			break;						//						|
-		case 'b': GetCookTime(arr, num);  //----------------
-			break;//										|	|
-		case 'c': GetReadyTime(arr, num);//----------------------------> all these have issues...when we selecct from this menu it doesnt work
-			break;//										|	|
-		case 'd': GetTemprature(arr, num);//----------------
-			break;//											|
-		case 'e': GetCookMethod(arr, num);//--------------------
+		case 'a': GetPrepTime(arr, recipe);  
+			break;					
+		case 'b': GetCookTime(arr, recipe);  
+			break;
+		case 'c': GetReadyTime(arr, recipe);
+			break;								
+		case 'd': GetTemprature(arr, recipe);
+			break;										
+		case 'e': GetCookMethod(arr, recipe); // not working
 			break;
 		case 'f':
 			continueProgram = false;
@@ -264,40 +265,17 @@ void modifyCook(RECIPE arr[], int num)
 	}
 }
 
-void modifyRecipe(RECIPE arr[], int num)
+
+void modifyIngredients(RECIPE arr[], int recipe)
 {
-	bool continueProgram = true;
-	while (continueProgram) {
-
-		char choice = printUpdateRecipeMenu();
-		switch (choice)
-		{
-		case 'a': GetMealType(arr, num);
-			break;
-		case 'b': GetRecipeName(arr, num);
-			break;
-		case 'c': GetPrice(arr, num);
-			break;
-		case 'd':
-			continueProgram = false;
-			break;
-		default:
-			printf("\ninvalid entry\n\n\n");
-			break;
-		}
-	}
-}
-
-void modifyIngredients(RECIPE arr[], int num)
-{
-
+	recipe = 1;
 	bool continueProgram = true;
 	while (continueProgram) {
 
 		char choice = printUpdateIngredientsMenu();
 		switch (choice)
 		{
-		case 'a': GetIngredients(arr, num);
+		case 'a': GetIngredients(arr, recipe);
 			break;
 		case 'b':
 			continueProgram = false;
@@ -309,6 +287,35 @@ void modifyIngredients(RECIPE arr[], int num)
 	}
 
 }
+
+void modifyRecipe(RECIPE arr[], int recipe)
+{
+
+	recipe = 1;
+
+	bool continueProgram = true;
+	while (continueProgram) {
+
+		char choice = printUpdateRecipeMenu();
+		switch (choice)
+		{
+		case 'a': GetMealType(arr, recipe); // not working
+			break;
+		case 'b': GetRecipeName(arr, recipe); // not working
+			break;
+		case 'c': GetPrice(arr, recipe); 
+			break;
+		case 'd':
+			continueProgram = false;
+			break;
+		default:
+			printf("\ninvalid entry\n\n\n");
+			break;
+		}
+	}
+}
+
+
 
 void recipeRange(RECIPE arr[], int num)
 {   //gets user input for a type of meal (breakfast, lunch, dinner) and it will display only that type of recipe 

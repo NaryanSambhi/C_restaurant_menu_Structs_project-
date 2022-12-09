@@ -27,7 +27,7 @@ void deleteRecipe(RECIPE arr[], int num);
 
 void updateRecipe(RECIPE arr[], int num); //unimplemented
 
-void modifyCook(RECIPE arr[], int num);
+void modifyCook(RECIPE arr[], int recipe);
 
 void modifyRecipe(RECIPE arr[], int num);
 

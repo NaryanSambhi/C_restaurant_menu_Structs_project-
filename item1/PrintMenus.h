@@ -15,3 +15,15 @@
 ////////// MENUS //////////
 
 char printmenuMain(void);
+
+
+
+
+char printUpdateMenu(void);
+
+char printUpdateHowToCookMenu(void);
+
+char printUpdateIngredientsMenu(void);
+
+char printUpdateRecipeMenu(void);
+
