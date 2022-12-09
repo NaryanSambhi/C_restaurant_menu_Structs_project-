@@ -38,6 +38,7 @@
 
 //MAJOR ISSUES
 // update recipe ingredients can lead to old data printing
+// infinite loop when trying to modify meal type
 // deleting recipe does not flag recipes INGREDIENTS to false
 
 //MINOR ISSUES
