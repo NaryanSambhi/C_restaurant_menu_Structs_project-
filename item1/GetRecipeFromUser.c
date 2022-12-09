@@ -24,7 +24,7 @@ void GetRecipeName(RECIPE arr[], int num)
 {
 	//grab first name
 	printf("\nPlease enter the name of the recipe: ");
-	scanf("%s", arr[num].recipeName);
+	scanf("%[^\n]s", arr[num].recipeName);
 	
 	if (strlen(arr[num].recipeName) > MAX - OFFSET) //checking for garbage
 	{																//-2 offset
@@ -206,7 +206,7 @@ void GetCookMethod(RECIPE arr[], int num)
 {
 	//grab method used name
 	printf("Please enter cooking method used: ");
-	scanf("%s", arr[num].cook.method);
+	scanf("%[^\n]s", arr[num].cook.method);
 
 	if (strlen(arr[num].cook.method) > MAX - OFFSET) //checking for garbage
 	{															//-1 includes NULL terminator
