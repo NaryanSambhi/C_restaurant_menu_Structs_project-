@@ -43,7 +43,7 @@ char printmenuMain(void)
 /////////////// SUB CHOICE MENUS ///////////////
 
 char printUpdateMenu(void)
-{
+{   
 	printf("\nTo choose a function, enter its label: \n");
 	printf("a) To edit How To Cook\n");
 	printf("b) To edit Ingredients\n");

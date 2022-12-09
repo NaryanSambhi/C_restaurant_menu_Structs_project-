@@ -14,6 +14,7 @@
 
 #define MAX 20
 #define MAXNUMBEROFINGREDIENTS 10
+#define MENUSIZE 24 //LIMITED AS AIMED FOR CULINARY BUSINESSES
 
 //how to cook
 typedef struct cook 

@@ -41,6 +41,7 @@
 // from add recipe it displays recipe numbers 0 -23 not 1 -24
 // search feature a bit buggy
 // if user enters a character like s@up it will accept it for adding a recipe
+// if there is no recipe to update it will display no recipe detected and continue with the menus
 //UNIMPLEMENTED
 
 ///////////// PROGRAM /////////////
@@ -56,7 +57,6 @@
 #include "MainFunctions.h"
 #include "PrintMenus.h"
 
-#define MENUSIZE 24 //LIMITED AS AIMED FOR CULINARY BUSINESSES
 
 
 //FUNCTION
