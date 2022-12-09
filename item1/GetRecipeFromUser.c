@@ -92,11 +92,6 @@ void GetRecipeAll(RECIPE arr[], int num)
 //gets the ingredients inputed by the user 
 void GetIngredients(RECIPE arr[], int num)
 {   
-	//defaults the status of all ingredients to false - not to be read
-	for (int i = 0; i < num; i++)
-		arr[num].ingredients[i][i].status = false; //resets status in case of modify or new recipes
-	
-
 //get limit which the user would input themselves 
 	int userLimit;
 	printf("Enter the number of ingredients for the recipe (maximum of %d): ", MAXNUMBEROFINGREDIENTS);

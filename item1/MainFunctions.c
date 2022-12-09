@@ -121,9 +121,17 @@ void addRecipe(RECIPE arr[], int num)
 	{
 		printf("\nRecipe Created\n\n");
 		arr[recipe].status = true; //flag status to taken - can be read and cant be overwritten
+		return;
 	}
-	else //if the user types n to cancel then it will cancel the process
-		printf("\nRecipe Creation Cancelled\n\n");
+	//else
+	//if the user types n to cancel then it will cancel the process
+
+	//defaults the status of all ingredients to false - not to be read
+	for (int i = 0; i < MAXNUMBEROFINGREDIENTS; i++)
+		arr[recipe].ingredients[i][i].status = false; //resets status in case of modify or new recipes
+
+
+	printf("\nRecipe Creation Cancelled\n\n");
 
 }
 
@@ -157,12 +165,17 @@ void deleteRecipe(RECIPE arr[], int num)
 	printRecipeSimple(arr, recipe);
 
 	//get input
-	printf("\nEnter 'y' to confirm or 'n' to cancel: ");
+	printf("\n\nEnter 'y' to confirm or 'n' to cancel: ");
 	char ch = getchar();
 	if (ch == 'y')
 	{
 		printf("\nRecipe Deleted\n");
 		arr[recipe].status = false; //flag recipe status to empty -> does not delete data, only flags for overwriting  
+
+		//defaults the status of all ingredients to false - not to be read
+		for (int i = 0; i < MAXNUMBEROFINGREDIENTS; i++)
+			arr[recipe].ingredients[i][i].status = false; //resets status in case of modify or new recipes
+
 	}
 	else
 		printf("\nDeletion Cancelled\n");
@@ -329,7 +342,14 @@ void modifyIngredients(RECIPE arr[], int recipe)
 		char choice = printUpdateIngredientsMenu();
 		switch (choice)
 		{
-		case 'a': GetIngredients(arr, recipe);
+		case 'a': {
+			//defaults the status of all ingredients to false - not to be read
+			for (int i = 0; i < MAXNUMBEROFINGREDIENTS; i++)
+				arr[recipe].ingredients[i][i].status = false; //resets status in case of modify or new recipes
+			
+			//GET INGREDIENTS
+			GetIngredients(arr, recipe);
+		}
 			break;
 		case 'b':
 			continueProgram = false;

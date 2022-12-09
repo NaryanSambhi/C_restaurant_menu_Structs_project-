@@ -25,6 +25,7 @@ bool NoRecipes(RECIPE arr[], int num);
 bool FullRecpies(RECIPE arr[], int num);
 
 
+
 ////////// SAFE GETS //////////
 
 //gets the user to input only numbers and a limit from 1-24

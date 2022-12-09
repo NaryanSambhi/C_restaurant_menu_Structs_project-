@@ -37,8 +37,6 @@
 ///////////// BUGS LOG /////////////
 
 //MAJOR ISSUES
-// update recipe ingredients can lead to old data printing
-// deleting recipe does not flag recipes INGREDIENTS to false
 
 //MINOR ISSUES
 // from add recipe it displays recipe numbers 0 -23 not 1 -24
