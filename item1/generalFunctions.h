@@ -20,7 +20,6 @@
 void listTaken(RECIPE arr[], int num);
 void listEmpty(RECIPE arr[], int num);
 
-
 //bools to assign eihter the recipes are full or empty 
 bool NoRecipes(RECIPE arr[], int num);
 bool FullRecpies(RECIPE arr[], int num);

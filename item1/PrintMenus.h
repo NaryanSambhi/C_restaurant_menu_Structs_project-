@@ -17,7 +17,8 @@
 //the main menu the user sees
 char printmenuMain(void);
 
-//the update menus and where the user specfically choses what to update
+////////// MODIFY //////////
+
 char printUpdateMenu(void);
 
 char printUpdateHowToCookMenu(void);
@@ -26,3 +27,13 @@ char printUpdateIngredientsMenu(void);
 
 char printUpdateRecipeMenu(void);
 
+
+////////// RANGE //////////
+
+char printRangeMenu(void);
+
+void Breakfast(RECIPE arr[], int num);
+
+void Lunch(RECIPE arr[], int num);
+
+void Dinner(RECIPE arr[], int num);

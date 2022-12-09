@@ -6,9 +6,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define OFFSET 2 //includes null, etc
-#define MAXNUMBEROFINGREDIENTS   10 // used for the get ingredients 
-
 
 // --------------------------------------------------------------------------------------
 // PROG71985 - F22																	   //
@@ -23,18 +20,16 @@
 //gets the recipe name from the user 
 void GetRecipeName(RECIPE arr[], int num)
 {
-	//grab first name using fgets
+	//grab first name using safe gets
 	printf("\nPlease enter the name of the recipe: ");
-	fgets(arr[num].recipeName, MAX, stdin);
+	
+	scanf("%s", arr[num].recipeName);
 
 	if (strlen(arr[num].recipeName) > MAX - OFFSET) //checking for garbage
 	{															//-1 includes NULL terminator
 		printf("\n\nOVERFLOW ERROR\n\n");
 		exit(EXIT_FAILURE);
 	}
-
-	//gets rid of new line from fgets
-	arr[num].recipeName[strcspn(arr[num].recipeName, "\n")] = 0;
 }
 
 //gets the price from the user 
@@ -46,10 +41,6 @@ void GetPrice(RECIPE arr[], int num)
 		printf("Invalid Input Error \n");
 		exit(EXIT_FAILURE);
 	}
-
-	//discard new line for fgets
-	int c;
-	((c = getchar()) != '\n' && c != EOF); //ensure new line and white space from scanf isnt added to fgets functions
 }
 
 //get type of meal (Breakfast, Lunch, Dinner) from the user 
@@ -76,8 +67,6 @@ void GetMealType(RECIPE arr[], int num)
 		arr[num].type = lunch;
 	if (ch == 'c')
 		arr[num].type = dinner;
-
-	printf("\n");
 }
 
 
@@ -94,9 +83,16 @@ void GetRecipeAll(RECIPE arr[], int num)
 //gets the ingredients inputed by the user 
 void GetIngredients(RECIPE arr[], int num)
 {   
+	/*
+	for (int i = 0; i < num; i++)
+		arr[num].ingredients[i][i].status = false; //resets status in case of modify or new recipes
+	*/
+
+
+
 //get limit which the user would input themselves 
 	int userLimit;
-	printf("Enter the number of ingredients for the recipe: ");
+	printf("Enter the number of ingredients for the recipe (maximum of %d): ", MAXNUMBEROFINGREDIENTS);
 
 //garbage check to be sure the user input is valid y being in a range and also not a character
 	while (scanf("%d", &userLimit) != 1)
@@ -109,31 +105,25 @@ void GetIngredients(RECIPE arr[], int num)
 		printf("Invalid Input Error \n");
 		exit(EXIT_FAILURE);
 	}
-	//discard new line for fgets
-	int c;
-	((c = getchar()) != '\n' && c != EOF); //ensure new line and white space from scanf isnt added to fgets functions
+	
 
-
-//fgets ingredient name loop
+//gets ingredient name loop
 // 
 	//uses the number defined by the user to prompt them to input their ingredeints
-	printf("Enter %d ingredents for the ingredients list: \n", userLimit);
+	printf("Enter %d ingredents for the ingredients list:\n\n", userLimit);
 	for (int i = 0; i < userLimit; i++)
-	{   //user enters their specific ingredients and it is using fgets to store the value 
+	{   
+		//user enters their specific ingredients and it is using safe gets to store the value 
 		printf("Enter the name of ingredient: ");
+		scanf("%s", arr[num].ingredients[i][i].name);
 
-		fgets(arr[num].ingredients[i][i].name, MAX, stdin);
-
-		if (strlen(arr[num].ingredients[i][i].name) > MAX - OFFSET) //checking for garbage
+		if (arr[num].ingredients[i][i].name > (MAX - OFFSET)) //checking for garbage
 		{															//-1 includes NULL terminator
 			printf("\n\nOVERFLOW ERROR\n\n");
 			exit(EXIT_FAILURE);
 		}
 		//sets the status equal to true
 		arr[num].ingredients[i][i].status = true;
-
-		//gets rid of the extra line created by fgets
-		arr[num].ingredients[i][i].name[strcspn(arr[num].ingredients[i][i].name, "\n")] = 0;
 
 	}
 	
@@ -150,11 +140,6 @@ void GetPrepTime(RECIPE arr[], int num)
 		printf("Invalid Input Error \n");
 		exit(EXIT_FAILURE);
 	}
-
-	//discard new line for fgets
-	int c;
-	((c = getchar()) != '\n' && c != EOF); //ensure new line and white space from scanf isnt added to fgets functions
-
 }
 
 //gets the input from the user for the get ready time 
@@ -166,11 +151,6 @@ void GetReadyTime(RECIPE arr[], int num)
 		printf("Invalid Input Error \n");
 		exit(EXIT_FAILURE);
 	}
-
-	//discard new line for fgets
-	int c;
-	((c = getchar()) != '\n' && c != EOF); //ensure new line and white space from scanf isnt added to fgets functions
-
 }
 
 //gets the cooktime from the user 
@@ -182,11 +162,6 @@ void GetCookTime(RECIPE arr[], int num)
 		printf("Invalid Input Error \n");
 		exit(EXIT_FAILURE);
 	}
-
-	//discard new line for fgets
-	int c;
-	((c = getchar()) != '\n' && c != EOF); //ensure new line and white space from scanf isnt added to fgets functions
-
 }
 
 //gets the temperature from the user 
@@ -198,28 +173,20 @@ void GetTemprature(RECIPE arr[], int num)
 		printf("Invalid Input Error \n");
 		exit(EXIT_FAILURE);
 	}
-
-	//discard new line for fgets
-	int c;
-	((c = getchar()) != '\n' && c != EOF); //ensure new line and white space from scanf isnt added to fgets functions
-
 }
 
 //gets tehe cooking method from the user 
-void GetCookMethod(RECIPE arr[], int recipe)
+void GetCookMethod(RECIPE arr[], int num)
 {
 	//grab first name
 	printf("Please enter cooking method used: ");
-	fgets(arr[recipe].cook.method, MAX, stdin);
+	scanf("%s", arr[num].cook.method);
 
-	if (strlen(arr[recipe].cook.method) > MAX - OFFSET) //checking for garbage
+	if (strlen(arr[num].cook.method) > MAX - OFFSET) //checking for garbage
 	{															//-1 includes NULL terminator
 		printf("\n\nOVERFLOW ERROR\n\n");
 		exit(EXIT_FAILURE);
 	}
-
-	//gets rid of new line from fgets
-	arr[recipe].cook.method[strcspn(arr[recipe].cook.method, "\n")] = 0;
 }
 
 //gets all the cook functions

@@ -37,13 +37,14 @@
 ///////////// BUGS LOG /////////////
 
 //MAJOR ISSUES
+// update recipe ingredients can lead to old data printing
+// deleting recipe does not flag recipes INGREDIENTS to false
+
 //MINOR ISSUES
 // from add recipe it displays recipe numbers 0 -23 not 1 -24
-// search feature a bit buggy
-// if user enters a character like s@up it will accept it for adding a recipe
-// if there is no recipe to update it will display no recipe detected and continue with the menus
-// update menu not working properly with updating the menu type and ingredients 
+
 //UNIMPLEMENTED
+//custom string instructions struct
 
 ///////////// PROGRAM /////////////
 
@@ -59,7 +60,6 @@
 #include "PrintMenus.h"
 
 
-
 //FUNCTION
 int main(void)
 {
@@ -68,8 +68,6 @@ int main(void)
 	size_t size = sizeof(RECIPE);
 
 	RECIPE menu[MENUSIZE]={'\0'};
-
-	//INGREDIENTS MenuIngredients[10]={'\0'}; -> maybe add sepperate array inside for ingredients
 
 //if no contents detected:
 

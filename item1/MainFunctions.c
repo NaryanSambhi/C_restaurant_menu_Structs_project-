@@ -66,24 +66,16 @@ void searchRecipe(RECIPE arr[], int num)
 		printf("\nOVERFLOW ERROR");
 		exit(EXIT_FAILURE);
 	}
-	//else
+	
 	//search for name from recipes
 	for (int i = 0; i < num; i++)
 	{
 		if ((strcmp(arr[i].recipeName, temp) == 0))  //if found return
 		{
-			printf("\nRecipe Found\n");
-			printRecipeSimple(arr, i);
-
-			//ask for complex info?
-			printf("\nWould you like to print the recipes information?\n");
-			printf("\nEnter 'y' to confirm or 'n' to cancel: ");
-
-			char ch = getchar();
-			if (ch == 'y')
-			{
-				PRINTALL(arr, i);
-			}
+			printf("\nRecipe Found:\n\n");
+	
+			PRINTALL(arr, i);
+			
 			return;
 		}
 	}
@@ -198,7 +190,7 @@ void displaySingleRecipe(RECIPE arr[], int num)
 	//displays all simple recipes to chose more info on:
 	displayAllRecipes(arr, num);
 
-	printf("\n\nPlease select a recipe to print full recipe data");
+	printf("\n\nPlease select a recipe to print full recipe data: ");
 
 	//grab which recipe to view more information on: 
 	int recipe = NumOnly(arr, num);
@@ -213,23 +205,90 @@ void displaySingleRecipe(RECIPE arr[], int num)
 
 }
 
+void recipeRange(RECIPE arr[], int num)
+{
+
+	//check if there are recipe slots taken yet
+	bool emp = NoRecipes(arr, num);
+	if (emp == true)
+	{
+		printf("\nNo recipes assigned yet\n");
+		return;
+	}
+
+	//get recipe to modify
+	printf("Please select which recipe range to view: \n");
+
+	//start function
+	bool continueProgram = true;
+	while (continueProgram) {
+
+		char choice = printRangeMenu();
+		switch (choice)
+		{
+		case 'a': Breakfast(arr, num);
+			printf("\n");
+
+			break;
+		case 'b': Lunch(arr, num);
+			printf("\n");
+			break;
+		case 'c': Dinner(arr, num);
+			printf("\n");
+			break;
+		case 'd':
+			continueProgram = false;
+			break;
+		default:
+			printf("\ninvalid entry\n\n\n");
+			break;
+		}
+	}
+
+}
+
+////////////////// MODIFY //////////////////
+
 //updates the recipe based on the user input 
 void updateRecipe(RECIPE arr[], int num)
 {
+	//check if there are recipe slots taken yet
+	bool emp = NoRecipes(arr, num);
+	if (emp == true)
+	{
+		printf("\nNo recipes assigned yet\n");
+		return;
+	}
 
-	displaySingleRecipe(arr, num);
-	//MENU to either update the modifycook, ingredients, or the recipe 
+//get recipe to modify
+	printf("Please select which recipe to modify by ID number: \n");
+
+	displayAllRecipes(arr, num); //prints available recipes
+
+	printf("\n\n");
+
+	//grab input
+	int recipe = NumOnly(arr, num);
+	if (arr[recipe].status == false)
+	{
+		printf("\nRecipe slot empty\n");
+		return;
+	}
+
+	PRINTALL(arr, recipe);
+
+//start function
 	bool continueProgram = true;
 	while (continueProgram) {
 
 		char choice = printUpdateMenu();
 		switch (choice)
 		{
-		case 'a': modifyCook(arr, num);
+		case 'a': modifyCook(arr, recipe);
 			break;
-		case 'b':modifyIngredients(arr, num);
+		case 'b':modifyIngredients(arr, recipe);
 			break;
-		case 'c': modifyRecipe(arr, num);
+		case 'c': modifyRecipe(arr, recipe);
 			break;
 		case 'd':
 			continueProgram = false;
@@ -319,10 +378,4 @@ void modifyRecipe(RECIPE arr[], int recipe)
 			break;
 		}
 	}
-}
-
-
-void recipeRange(RECIPE arr[], int num)
-{   //gets user input for a type of meal (breakfast, lunch, dinner) and it will display only that type of recipe 
-	printf("\nrecipe range function here\n");
 }

@@ -77,12 +77,10 @@ char printUpdateHowToCookMenu(void)
 	return choice;
 }
 
-
-
 char printUpdateIngredientsMenu(void)
 {
 	printf("\nTo choose a function, enter its label: \n");
-	printf("a) Update/Change the  Ingredients\n");
+	printf("a) Update/Change the Ingredients\n");
 	printf("b) Quit\n");
 
 	char choice;
@@ -92,12 +90,8 @@ char printUpdateIngredientsMenu(void)
 	return choice;
 }
 
-
-
 char printUpdateRecipeMenu(void)
 {
-
-
 	printf("\nTo choose a function, enter its label: \n");
 	printf("a) Update/Change the Meal Type\n");
 	printf("b) Update/Change Recipe Name\n");
@@ -109,4 +103,56 @@ char printUpdateRecipeMenu(void)
 	scanf(" %c", &choice); //return to main input
 
 	return choice;
+}
+
+
+/////////////// RANGE ///////////////
+
+char printRangeMenu(void)
+{
+	printf("\nTo choose a function, enter its label: \n");
+	printf("a) Display Breakfast menu\n");
+	printf("b) Display Lunch menu\n");
+	printf("c) Display Dinner menu\n");
+	printf("d) Quit\n");
+
+	char choice;
+	printf("\nEnter Choice: ");
+	scanf(" %c", &choice); //return to main input
+
+	return choice;
+}
+
+void Breakfast(RECIPE arr[], int num)
+{
+
+	for (int i = 0; i < num; i++)
+	{
+		if (arr[i].status == true && arr[i].type == breakfast)
+		{
+			printRecipeSimple(arr, i);
+		}
+	}
+}
+
+void Lunch(RECIPE arr[], int num)
+{
+	for (int i = 0; i < num; i++)
+	{
+		if (arr[i].status == true && arr[i].type == lunch)
+		{
+			printRecipeSimple(arr, i);
+		}
+	}
+}
+
+void Dinner(RECIPE arr[], int num)
+{
+	for (int i = 0; i < num; i++)
+	{
+		if (arr[i].status == true && arr[i].type == dinner)
+		{
+			printRecipeSimple(arr, i);
+		}
+	}
 }

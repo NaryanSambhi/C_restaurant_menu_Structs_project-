@@ -14,6 +14,7 @@
 
 #define MAX 20
 #define MAXNUMBEROFINGREDIENTS 10
+#define OFFSET 2 //includes null, etc
 #define MENUSIZE 24 //LIMITED AS AIMED FOR CULINARY BUSINESSES
 
 //how to cook

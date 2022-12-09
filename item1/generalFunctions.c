@@ -2,7 +2,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 
-
 // --------------------------------------------------------------------------------------
 // PROG71985 - F22																	   //
 // GROUP PROJECT - DEC 2022															   //
@@ -16,6 +15,7 @@
 #include <string.h>
 
 #include "Recipe.h"
+#include "printFunctions.h"
 
 /////////// MAIN SUPPORTING FUNCTIONS ///////////
 
@@ -96,10 +96,6 @@ int NumOnly(int num)
 		printf("Invalid Input Error \n");
 		exit(EXIT_FAILURE);
 	}
-
-	//discard new line for fgets
-	int c;
-	((c = getchar()) != '\n' && c != EOF); //ensure new line and white space from scanf isnt added to fgets functions
 
 	return input;
 }
