@@ -27,21 +27,19 @@
 //																					   //
 //																					   //
 // NON-PRIORITY FEATURES															   //
-//	-user friendly UI																   //
-//	-search by alphabetical															   //
+//	-user friendly UI																   //															   
 //  -search by meal type (breakfast, lunch, Dinner, etc)				               //
 //																					   //
-// --------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------//
 
 
 ///////////// BUGS LOG /////////////
 
-//MAJOR ISSUES
+//MAJOR ISSUES//
 
-//MINOR ISSUES
-// from add recipe it displays recipe numbers 0 -23 not 1 -24
+//MINOR ISSUES//
 
-//UNIMPLEMENTED
+//UNIMPLEMENTED//
 //custom string instructions struct
 //			-> would be very similar to ingredients 
 
@@ -62,7 +60,6 @@
 //FUNCTION
 int main(void)
 {
-	//maybe put the files in seperate functions?
 	FILE* fp;
 	size_t size = sizeof(RECIPE);
 

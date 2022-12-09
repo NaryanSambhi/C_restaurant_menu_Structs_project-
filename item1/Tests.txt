@@ -1,0 +1,19 @@
+Debugging Process 
+
+- check to be usre user input is valid 
+ex. the user cannot input a character when they are supposed to do a number
+get num function solves this 
+
+-check does the file save or not, look through the file contents 
+
+- check if the delete function works is by adding a menu item and see does it appear, if so then delete it and press display recipes, it should not be there anymore
+
+- check if add function function works is by adding a menu item and check does it appear in display recipes 
+
+- check the search recipe functions is add an recipe and type it in the search function 
+
+- check if a user input is also valid in a range is to use the get num function as the user can only enter up to 24 slots 
+
+- check the update function by adding a recipe and updating its contents spefcicially. Then checking did it save by displaying the full recipe details 
+
+- check the search function by creating a recipe then typing its name to search for it

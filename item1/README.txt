@@ -1,4 +1,6 @@
-Katarina Lukic: Leader/Coder, generated ideas for the structs and menu items, divided up the work, created the get ingredients and printed them, added/changed comments, fixed/tested bugs,  did test cases, collaborated verbally on the code layout with others. 
+//How the work was distributed 
+
+Katarina Lukic: Leader/Coder, generated ideas for the structs and menu items, divided up the work, created the get ingredients and printed them, added/changed comments, fixed/tested bugs, collaborated verbally on the code layout with others, checkin in with progress and made suggestions. 
 
 Muhammed Asim: Coder: generated ideas for the structs/ menu items, created the menus/switch cases, added/chnaged comments, fixed / tested bugs, collaborated verbally with the recipe types/menu items
 
