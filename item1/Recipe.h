@@ -12,8 +12,8 @@
 
 #include <stdbool.h>
 
-#define MAX 20
-#define MAXNUMBEROFINGREDIENTS 10
+#define MAX 20  //used for strings 
+#define MAXNUMBEROFINGREDIENTS 10 //max number of ingredients the user can input
 #define OFFSET 2 //includes null, etc
 #define MENUSIZE 24 //LIMITED AS AIMED FOR CULINARY BUSINESSES
 
