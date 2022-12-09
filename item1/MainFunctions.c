@@ -53,8 +53,6 @@ void searchRecipe(RECIPE arr[], int num)
 	printf("\nInput recipe name: ");
 	scanf("%s", temp);
 
-	//incase customer searched with lowercase name
-	temp[0] = toupper(temp[0]);
 
 	//stop overflow and exits the program
 	if (strlen(temp) > MAX)
