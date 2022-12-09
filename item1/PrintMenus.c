@@ -13,7 +13,9 @@
 
 #include <stdio.h>
 #include "GetRecipesFromUser.h"
+#include "printFunctions.h" 
 
+//the main menu the user sees with all the required options 
 char printmenuMain(void)
 {
 	printf_s("\n");
@@ -39,7 +41,7 @@ char printmenuMain(void)
 	return choice;
 }
 
-
+//menu for the type of recipe
 char PrintMealTypeMenu(void)
 {
 	printf("\nTo choose a function, enter its label: \n");
@@ -57,6 +59,7 @@ char PrintMealTypeMenu(void)
 
 /////////////// SUB CHOICE MENUS ///////////////
 
+//menu for the user to update the recipe
 char printUpdateMenu(void)
 {   
 	printf("\nTo choose a function, enter its label: \n");
@@ -75,6 +78,7 @@ char printUpdateMenu(void)
 
 /////////////// MODIFY RECIPE MENUS ///////////////
 
+//menu for the user to update the cook part of the recipe 
 char printUpdateHowToCookMenu(void)
 {
 	printf("\nTo choose a function, enter its label: \n");
@@ -92,6 +96,7 @@ char printUpdateHowToCookMenu(void)
 	return choice;
 }
 
+//menu for the user to update the ingredients 
 char printUpdateIngredientsMenu(void)
 {
 	printf("\nTo choose a function, enter its label: \n");
@@ -105,6 +110,7 @@ char printUpdateIngredientsMenu(void)
 	return choice;
 }
 
+//menu for the user to update the recipe 
 char printUpdateRecipeMenu(void)
 {
 	printf("\nTo choose a function, enter its label: \n");
@@ -123,6 +129,7 @@ char printUpdateRecipeMenu(void)
 
 /////////////// RANGE ///////////////
 
+//menu to display the range inputed by the user 
 char printRangeMenu(void)
 {
 	printf("\nTo choose a function, enter its label: \n");
@@ -138,34 +145,39 @@ char printRangeMenu(void)
 	return choice;
 }
 
+//function that prints only the breakfast type of the menu
 void Breakfast(RECIPE arr[], int num)
 {
 
 	for (int i = 0; i < num; i++)
-	{
-		if (arr[i].status == true && arr[i].type == breakfast)
-		{
-			printRecipeSimple(arr, i);
+	{   
+		if (arr[i].status == true && arr[i].type == breakfast) //if statement checks if the status is true (therefore there is an item slot)
+		{                                                      //also the if statement checks if the type is Breakfast
+			printRecipeSimple(arr, i); //prints the simple recipe menu
 		}
 	}
 }
 
+//function that only prints the Lunch type of the menu 
 void Lunch(RECIPE arr[], int num)
 {
 	for (int i = 0; i < num; i++)
 	{
-		if (arr[i].status == true && arr[i].type == lunch)
+		if (arr[i].status == true && arr[i].type == lunch)//if statement checks if the status is true (therefore there is an item slot)
+                                                   //also the if statement checks if the type is Lunch
 		{
 			printRecipeSimple(arr, i);
 		}
 	}
 }
 
+//function that only prints the Dinner type of the menu
 void Dinner(RECIPE arr[], int num)
 {
 	for (int i = 0; i < num; i++)
 	{
-		if (arr[i].status == true && arr[i].type == dinner)
+		if (arr[i].status == true && arr[i].type == dinner)//if statement checks if the status is true (therefore there is an item slot)
+			                                               //also the if statement checks if the type is dinner
 		{
 			printRecipeSimple(arr, i);
 		}

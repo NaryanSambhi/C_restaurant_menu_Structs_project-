@@ -211,6 +211,7 @@ void displaySingleRecipe(RECIPE arr[], int num)
 
 }
 
+//dsiplays the recipe in the range based on the recipe type (breakfast, lunch, dinner) 
 void recipeRange(RECIPE arr[], int num)
 {
 	//check if there are recipe slots taken yet
@@ -221,7 +222,7 @@ void recipeRange(RECIPE arr[], int num)
 		return;
 	}
 
-	//get range choice
+	//get range choice using a switch case 
 	printf("Please select which recipe range to view: \n");
 
 	bool continueProgram = true;
@@ -263,7 +264,7 @@ void updateRecipe(RECIPE arr[], int num)
 		return;
 	}
 
-//get recipe to modify
+//get recipe from the user to modify
 	printf("Please select which recipe to modify by ID number: \n");
 
 	displayAllRecipes(arr, num); //prints available recipes
@@ -280,7 +281,7 @@ void updateRecipe(RECIPE arr[], int num)
 	printf("RECIPE:\n");
 	PRINTALL(arr, recipe);
 
-//start function
+//start function and user picks what part of the recipe they want ot modify
 	bool continueProgram = true;
 	while (continueProgram) {
 
@@ -304,7 +305,8 @@ void updateRecipe(RECIPE arr[], int num)
 
 }
 //////////// SUB MENUS FOR MODIFY SUB ////////////
-//modify cook sub
+
+//modify cook sub menu
 void modifyCook(RECIPE arr[], int recipe )
 {
 	bool continueProgram = true;
@@ -333,7 +335,7 @@ void modifyCook(RECIPE arr[], int recipe )
 	}
 }
 
-//modify ingredients sub
+//modify ingredients sub menu
 void modifyIngredients(RECIPE arr[], int recipe)
 {
 	bool continueProgram = true;
@@ -362,7 +364,7 @@ void modifyIngredients(RECIPE arr[], int recipe)
 
 }
 
-//modify recipe (upper level data) sub
+//modify recipe (upper level data) sub menu
 void modifyRecipe(RECIPE arr[], int recipe)
 {
 	bool continueProgram = true;

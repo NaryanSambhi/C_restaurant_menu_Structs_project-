@@ -14,12 +14,13 @@
 
 /////////// PRINT DATAS ///////////
 
-
+//prints a simple version of the recipe only including the the id of the recipe, the name, price, and type 
 void printRecipeSimple(RECIPE arr[], int num)
 {
-	//print
+	//print the id, name, and price 
 	printf("\n%d: %s, $%.2f", arr[num].id, arr[num].recipeName, arr[num].price);
 
+	//prints the type of the recipe 
 	if (arr[num].type == breakfast)
 		printf(" Breakfast");
 	if (arr[num].type == lunch)
@@ -28,6 +29,7 @@ void printRecipeSimple(RECIPE arr[], int num)
 		printf(" Dinner");
 }
 
+//prints the how to cook part of the recipe which is the prep time, ready time, cook time, temperature as a number, and the cooking method as a string
 void printRecipeHowTo(RECIPE arr[], int num)
 {
 	printf("\n\nHOW TO COOK:\n");
@@ -38,11 +40,12 @@ void printRecipeHowTo(RECIPE arr[], int num)
 	printf("\nCookMethod: %s", arr[num].cook.method);
 }
 
+//prtins the recipe ingredeients by making sure the stauts is true (does it exist and have a slot), and by the name 
 void printRecipeIngredients(RECIPE arr[], int num)
 {
 	
 	printf("\n\nINGREDIENTS:\n");
-	
+	//the max number of ingredients the user can input is 10 
 	for (int i = 0; i < MAXNUMBEROFINGREDIENTS; i++)
 	{
 		if (arr[num].ingredients[i][i].status == true)
