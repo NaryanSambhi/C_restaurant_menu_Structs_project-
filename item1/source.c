@@ -42,6 +42,7 @@
 // search feature a bit buggy
 // if user enters a character like s@up it will accept it for adding a recipe
 // if there is no recipe to update it will display no recipe detected and continue with the menus
+// update menu not working properly with updating the menu type and ingredients 
 //UNIMPLEMENTED
 
 ///////////// PROGRAM /////////////
@@ -62,7 +63,7 @@
 //FUNCTION
 int main(void)
 {
-
+	//maybe put the files in seperate functions?
 	FILE* fp;
 	size_t size = sizeof(RECIPE);
 
@@ -118,12 +119,15 @@ int main(void)
 		}
 	}
 	
-	//save to file function here 
+	//save to file function here
+
+	//if the file does not have any contents then there was a save failure 
 	if ((fp = fopen("menu.dat", "w")) == NULL)
 		printf("SAVE FAILURE");
 	else //write to file
 	{
 		fwrite(menu, size, MENUSIZE, fp);
+		//close the file to end the process
 		fclose(fp);
 	}
 

@@ -7,7 +7,7 @@
 #include <string.h>
 
 #define OFFSET 2 //includes null, etc
-#define MAXNUMBEROFINGREDIENTS   10
+#define MAXNUMBEROFINGREDIENTS   10 // used for the get ingredients 
 
 
 // --------------------------------------------------------------------------------------
@@ -19,9 +19,11 @@
 //  Get Recipes from User
 
 /////////// GET RECIPE ///////////
+
+//gets the recipe name from the user 
 void GetRecipeName(RECIPE arr[], int num)
 {
-	//grab first name
+	//grab first name using fgets
 	printf("\nPlease enter the name of the recipe: ");
 	fgets(arr[num].recipeName, MAX, stdin);
 
@@ -35,6 +37,7 @@ void GetRecipeName(RECIPE arr[], int num)
 	arr[num].recipeName[strcspn(arr[num].recipeName, "\n")] = 0;
 }
 
+//gets the price from the user 
 void GetPrice(RECIPE arr[], int num)
 {
 	printf("\nInsert a number for the price:  ");
@@ -49,7 +52,7 @@ void GetPrice(RECIPE arr[], int num)
 	((c = getchar()) != '\n' && c != EOF); //ensure new line and white space from scanf isnt added to fgets functions
 }
 
-//get type 
+//get type of meal (Breakfast, Lunch, Dinner) from the user 
 void GetMealType(RECIPE arr[], int num)
 {
 	printf("\nSelect a following type for your recipe: \n");
@@ -57,7 +60,7 @@ void GetMealType(RECIPE arr[], int num)
 	printf("b) lunch\n");
 	printf("c) dinner\n");
 
-	//user input to pick
+	//user input to pick which type of meal 
 	char ch = getchar();
 	while (ch != 'a' && ch != 'b' & ch != 'c')
 	{
@@ -66,6 +69,7 @@ void GetMealType(RECIPE arr[], int num)
 		ch = getchar(); //asked twice to avoid printing message twice when user is inputing
 
 	}
+	//depending on the user input in the menu it wil type the choice to the enum
 	if (ch == 'a')
 		arr[num].type = breakfast;
 	if (ch == 'b')
@@ -77,7 +81,7 @@ void GetMealType(RECIPE arr[], int num)
 }
 
 
-//all
+//all of the get recipe functions to display to the user 
 void GetRecipeAll(RECIPE arr[], int num)
 {
 	GetRecipeName(arr, num);
@@ -87,14 +91,14 @@ void GetRecipeAll(RECIPE arr[], int num)
 
 /////////// GET INGREDIENTS ///////////
 
-
+//gets the ingredients inputed by the user 
 void GetIngredients(RECIPE arr[], int num)
 {   
-//get limit
+//get limit which the user would input themselves 
 	int userLimit;
 	printf("Enter the number of ingredients for the recipe: ");
 
-//garbage check
+//garbage check to be sure the user input is valid y being in a range and also not a character
 	while (scanf("%d", &userLimit) != 1)
 	{
 		printf("Invalid Input Error \n");
@@ -111,9 +115,11 @@ void GetIngredients(RECIPE arr[], int num)
 
 
 //fgets ingredient name loop
+// 
+	//uses the number defined by the user to prompt them to input their ingredeints
 	printf("Enter %d ingredents for the ingredients list: \n", userLimit);
 	for (int i = 0; i < userLimit; i++)
-	{
+	{   //user enters their specific ingredients and it is using fgets to store the value 
 		printf("Enter the name of ingredient: ");
 
 		fgets(arr[num].ingredients[i][i].name, MAX, stdin);
@@ -123,8 +129,10 @@ void GetIngredients(RECIPE arr[], int num)
 			printf("\n\nOVERFLOW ERROR\n\n");
 			exit(EXIT_FAILURE);
 		}
+		//sets the status equal to true
 		arr[num].ingredients[i][i].status = true;
 
+		//gets rid of the extra line created by fgets
 		arr[num].ingredients[i][i].name[strcspn(arr[num].ingredients[i][i].name, "\n")] = 0;
 
 	}
@@ -133,11 +141,12 @@ void GetIngredients(RECIPE arr[], int num)
 
 /////////// GET COOK ///////////
 
+//gets the number inputed by the user 
 void GetPrepTime(RECIPE arr[], int num)
 {
 	printf("Insert minutes for the prep-time: ");
 	while (scanf("%d", &arr[num].cook.preptime) != 1)
-	{
+	{   //the user inputs a character it will exit the program
 		printf("Invalid Input Error \n");
 		exit(EXIT_FAILURE);
 	}
@@ -148,6 +157,7 @@ void GetPrepTime(RECIPE arr[], int num)
 
 }
 
+//gets the input from the user for the get ready time 
 void GetReadyTime(RECIPE arr[], int num)
 {
 	printf("Insert minutes for the ready in time: ");
@@ -163,6 +173,7 @@ void GetReadyTime(RECIPE arr[], int num)
 
 }
 
+//gets the cooktime from the user 
 void GetCookTime(RECIPE arr[], int num)
 {
 	printf("Insert minutes for the cook time: ");
@@ -178,6 +189,7 @@ void GetCookTime(RECIPE arr[], int num)
 
 }
 
+//gets the temperature from the user 
 void GetTemprature(RECIPE arr[], int num)
 {
 	printf("Insert degrees for the temprature: ");
@@ -193,6 +205,7 @@ void GetTemprature(RECIPE arr[], int num)
 
 }
 
+//gets tehe cooking method from the user 
 void GetCookMethod(RECIPE arr[], int recipe)
 {
 	//grab first name
@@ -209,7 +222,7 @@ void GetCookMethod(RECIPE arr[], int recipe)
 	arr[recipe].cook.method[strcspn(arr[recipe].cook.method, "\n")] = 0;
 }
 
-//all
+//gets all the cook functions
 void GetCookAll(RECIPE arr[], int num)
 {
 	GetPrepTime(arr, num);

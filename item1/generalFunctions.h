@@ -16,16 +16,17 @@
 
 ////////// MAIN SUPPORTING FUNCTIONS //////////
 
-//other 
+//to display as a list the empty and taken menu items 
 void listTaken(RECIPE arr[], int num);
 void listEmpty(RECIPE arr[], int num);
 
 
-//bools
+//bools to assign eihter the recipes are full or empty 
 bool NoRecipes(RECIPE arr[], int num);
 bool FullRecpies(RECIPE arr[], int num);
 
 
 ////////// SAFE GETS //////////
 
+//gets the user to input only numbers and a limit from 1-24
 int NumOnly(int num);

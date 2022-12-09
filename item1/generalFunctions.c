@@ -21,7 +21,7 @@
 
 //lists all recipes flagged as true (taken )
 void listTaken(RECIPE arr[], int num)
-{
+{   //loops 24 times and prints it out 
 	for (int i = 0; i < num; i++)
 	{
 		if (arr[i].status == true) //taken
@@ -30,7 +30,7 @@ void listTaken(RECIPE arr[], int num)
 }
 //lists all recipes flagged as false (empty)
 void listEmpty(RECIPE arr[], int num)
-{
+{   //loops 24 times and prints it out 
 	for (int i = 0; i < num; i++)
 	{
 		if (arr[i].status == false) //empty
@@ -46,7 +46,7 @@ bool NoRecipes(RECIPE arr[], int num)
 
 	for (int i = 0; i < num; i++)
 	{
-		if (arr[i].status == false) //if a recipe is flagged as empty add to final count
+		if (arr[i].status == false) //if a recipe is flagged as empty add to final count 
 			count++;
 	}
 	if (count == num)
@@ -90,6 +90,7 @@ int NumOnly(int num)
 		printf("Invalid Input Error \n");
 		exit(EXIT_FAILURE);
 	}
+	//if the userinput is above the size of the menu or under zero then it will exit the program 
 	if (input > MENUSIZE - 1 || input < 0) {
 
 		printf("Invalid Input Error \n");

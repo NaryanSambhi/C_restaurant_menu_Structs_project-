@@ -36,6 +36,6 @@ void GetCookMethod(RECIPE arr[], int recipe);
 
 void GetCookAll(RECIPE arr[], int num);
 
-//GetAll
+/////////// GET ALL ///////////
 
 void GETALL(RECIPE arr[], int num);

@@ -40,7 +40,7 @@ void printRecipeHowTo(RECIPE arr[], int num)
 
 void printRecipeIngredients(RECIPE arr[], int num)
 {
-	//add bool function to flag if an ingredient slot is taken and prints it out 
+	
 	printf("\n\nINGREDIENTS:\n");
 	
 	for (int i = 0; i < MAXNUMBEROFINGREDIENTS; i++)

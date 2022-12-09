@@ -26,13 +26,13 @@
 
 /////////// MAIN ///////////
 
-
+//displays all the recipe for the user to pick from the list
 void displayAllRecipes(RECIPE arr[], int num)
 {
-
+	
 	//RETURN IF NO RECIPES FOUND
-	bool emp = NoRecipes(arr, num);
-	if (emp == true)
+	bool empty = NoRecipes(arr, num);
+	if (empty == true)
 	{
 		printf("\nNo Recipes detected\n");
 		return;
@@ -48,6 +48,7 @@ void displayAllRecipes(RECIPE arr[], int num)
 
 }
 
+//searches for the specfic recipe based on the user input 
 void searchRecipe(RECIPE arr[], int num)
 {
 	//grab user input
@@ -59,7 +60,7 @@ void searchRecipe(RECIPE arr[], int num)
 	//incase customer searched with lowercase name
 	temp[0] = toupper(temp[0]);
 
-	//stop overflow
+	//stop overflow and exits the program
 	if (strlen(temp) > MAX)
 	{
 		printf("\nOVERFLOW ERROR");
@@ -91,6 +92,8 @@ void searchRecipe(RECIPE arr[], int num)
 
 
 //manage recipes
+
+//adds a recipe to the list
 void addRecipe(RECIPE arr[], int num)
 {
 	//check if there are recipe slots available
@@ -106,7 +109,7 @@ void addRecipe(RECIPE arr[], int num)
 
 	printf("\n\nPlease select a free menu slot to assign the recipe: ");
 
-	//grab input
+	//grab input from the user 
 	int recipe = NumOnly(arr, num);
 	if (arr[recipe].status == true)
 	{
@@ -133,11 +136,12 @@ void addRecipe(RECIPE arr[], int num)
 		printf("\nRecipe Created\n\n");
 		arr[recipe].status = true; //flag status to taken 
 	}
-	else
+	else //if the user types n to cancel then it will cancel the process
 		printf("\nRecipe Creation Cancelled\n\n");
 
 }
 
+//deletes a recipe that the user would have added in the previous function 
 void deleteRecipe(RECIPE arr[], int num)
 {
 	//check if there are recipe slots taken yet
@@ -174,16 +178,18 @@ void deleteRecipe(RECIPE arr[], int num)
 		arr[recipe].status = false; //flag seat status to empty -> does not delete data, only flags for overwriting  
 	}
 	else
+		// if the user decides not to delete a recipe this message would output
 		printf("\nDeletion Cancelled\n");
 
 }
 
+// displays the single recipe 
 void displaySingleRecipe(RECIPE arr[], int num)
 {
 
 	//RETURN IF NO RECIPES FOUND
-	bool emp = NoRecipes(arr, num);
-	if (emp == true)
+	bool empty = NoRecipes(arr, num);
+	if (empty == true)
 	{
 		printf("\nNo Recipes detected\n");
 		return;
@@ -202,17 +208,17 @@ void displaySingleRecipe(RECIPE arr[], int num)
 		return;
 	}
 
-	//print complex info
+	//print complex info using the print all function
 	PRINTALL(arr, recipe);
 
 }
 
+//updates the recipe based on the user input 
 void updateRecipe(RECIPE arr[], int num)
 {
-	printf("\nupdate recipes function here\n");
 
 	displaySingleRecipe(arr, num);
-	//MENU
+	//MENU to either update the modifycook, ingredients, or the recipe 
 	bool continueProgram = true;
 	while (continueProgram) {
 
@@ -314,7 +320,6 @@ void modifyRecipe(RECIPE arr[], int recipe)
 		}
 	}
 }
-
 
 
 void recipeRange(RECIPE arr[], int num)

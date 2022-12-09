@@ -16,7 +16,7 @@ void printRecipeSimple(RECIPE arr[], int num);
 void printRecipeHowTo(RECIPE arr[], int num); 
 void printRecipeIngredients(RECIPE arr[], int num); 
 
-//prints all
+//prints all of the recipies 
 void PRINTALL(RECIPE arr[], int num);
 
 
