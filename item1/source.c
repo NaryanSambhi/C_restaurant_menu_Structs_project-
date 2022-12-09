@@ -38,6 +38,9 @@
 
 //MAJOR ISSUES
 //MINOR ISSUES
+// from add recipe it displays recipe numbers 0 -23 not 1 -24
+// search feature a bit buggy
+// if user enters a character like s@up it will accept it for adding a recipe
 //UNIMPLEMENTED
 
 ///////////// PROGRAM /////////////
@@ -71,13 +74,13 @@ int main(void)
 
 	if ((fp = fopen("menu.dat", "r")) == NULL)
 	{
-		for (int i = 0; i < MENUSIZE; i++) //creating 12 (empty) seats
+		for (int i = 0; i < MENUSIZE; i++) //creating 24 empty menu items
 		{
 			menu[i].status = false; //false == empty / false == 0
 			menu[i].id = i; //id of position
 		}
 	}
-	else //else, if file detected, read status of seats and close
+	else //else, if file detected, read status of the menu items and close
 	{
 		fread(menu, size, MENUSIZE, fp);
 		fclose(fp);

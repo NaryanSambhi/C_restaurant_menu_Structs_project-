@@ -108,7 +108,6 @@ void addRecipe(RECIPE arr[], int num)
 
 	//grab input
 	int recipe = NumOnly(arr, num);
-
 	if (arr[recipe].status == true)
 	{
 		printf("\nRecipe already assigned in selected slot \n\n");
@@ -149,9 +148,10 @@ void deleteRecipe(RECIPE arr[], int num)
 		return;
 	}
 
+	printf("Please choose which recipe to delete \n");
 	listTaken(arr, num); //lists taken recipes that can be deleted
-	printf("\n");
 
+	printf("\n");
 	//grab input
 	int recipe = NumOnly(arr, num);
 	if (arr[recipe].status == false)
@@ -311,6 +311,6 @@ void modifyIngredients(RECIPE arr[], int num)
 }
 
 void recipeRange(RECIPE arr[], int num)
-{
+{   //gets user input for a type of meal (breakfast, lunch, dinner) and it will display only that type of recipe 
 	printf("\nrecipe range function here\n");
 }

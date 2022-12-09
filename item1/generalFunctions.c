@@ -1,5 +1,7 @@
 
 #define _CRT_SECURE_NO_WARNINGS
+#define MENUSIZE 24
+
 
 // --------------------------------------------------------------------------------------
 // PROG71985 - F22																	   //
@@ -83,8 +85,13 @@ int NumOnly(int num)
 	int input;
 
 	//hard rejecting garbage in -> could improve to ask for correct input
-	if (scanf("%d", &input) != 1) 
+	if (scanf("%d", &input) != 1 )
 	{
+		printf("Invalid Input Error \n");
+		exit(EXIT_FAILURE);
+	}
+	if (input > MENUSIZE - 1 || input < 0) {
+
 		printf("Invalid Input Error \n");
 		exit(EXIT_FAILURE);
 	}

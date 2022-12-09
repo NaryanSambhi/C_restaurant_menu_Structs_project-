@@ -114,7 +114,7 @@ void GetIngredients(RECIPE arr[], int num)
 	printf("Enter %d ingredents for the ingredients list: \n", userLimit);
 	for (int i = 0; i < userLimit; i++)
 	{
-		printf("Enter the name of ingredients: ");
+		printf("Enter the name of ingredient: ");
 
 		fgets(arr[num].ingredients[i][i].name, MAX, stdin);
 
