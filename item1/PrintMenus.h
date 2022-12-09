@@ -17,6 +17,9 @@
 //the main menu the user sees
 char printmenuMain(void);
 
+char PrintMealTypeMenu(void);
+
+
 ////////// MODIFY //////////
 
 char printUpdateMenu(void);

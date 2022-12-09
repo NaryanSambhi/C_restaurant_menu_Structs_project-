@@ -97,5 +97,9 @@ int NumOnly(int num)
 		exit(EXIT_FAILURE);
 	}
 
+	//discard new line for fgets
+	int c;
+	((c = getchar()) != '\n' && c != EOF); //ensure new line and white space from scanf isnt added to fgets functions
+
 	return input;
 }

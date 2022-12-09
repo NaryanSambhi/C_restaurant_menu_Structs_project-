@@ -40,6 +40,21 @@ char printmenuMain(void)
 }
 
 
+char PrintMealTypeMenu(void)
+{
+	printf("\nTo choose a function, enter its label: \n");
+	printf("a) Breakfast\n");
+	printf("b) Lunch\n");
+	printf("c) Dinner\n");
+
+	char choice;
+	printf("\nEnter Choice: ");
+	scanf(" %c", &choice); //return to main input
+
+	return choice;
+}
+
+
 /////////////// SUB CHOICE MENUS ///////////////
 
 char printUpdateMenu(void)
