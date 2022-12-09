@@ -13,16 +13,22 @@
 
 
 //MAIN functions for the menu // 
-void searchRecipe(RECIPE arr[], int num); 
+void searchRecipe(RECIPE arr[], int num);
 
-void displayAllRecipes(RECIPE arr[], int num); 
+void displayAllRecipes(RECIPE arr[], int num);
 
 void recipeRange(RECIPE arr[], int num); //unimplemented
 
-void displaySingleRecipe(RECIPE arr[], int num); 
+void displaySingleRecipe(RECIPE arr[], int num);
 
-void addRecipe(RECIPE arr[], int num); 
+void addRecipe(RECIPE arr[], int num);
 
-void deleteRecipe(RECIPE arr[], int num); 
+void deleteRecipe(RECIPE arr[], int num);
 
 void updateRecipe(RECIPE arr[], int num); //unimplemented
+
+void modifyCook(RECIPE arr[], int num);
+
+void modifyRecipe(RECIPE arr[], int num);
+
+void modifyIngredients(RECIPE arr[], int num);

@@ -28,9 +28,9 @@ void GetIngredients(RECIPE arr[], int num);
 /////////// GET COOK ///////////
 
 void GetPrepTime(RECIPE arr[], int num);
-void GetCookTime(RECIPE arr[], int num); 
+void GetCookTime(RECIPE arr[], int num);
 void GetReadyTime(RECIPE arr[], int num);
-void GetTemprature(RECIPE arr[], int num); 
+void GetTemprature(RECIPE arr[], int num);
 void GetCookMethod(RECIPE arr[], int num);
 void GetCookMethod(RECIPE arr[], int recipe);
 

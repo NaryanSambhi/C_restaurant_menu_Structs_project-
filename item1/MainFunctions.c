@@ -19,6 +19,7 @@
 #include "Recipe.h"
 #include "printFunctions.h"
 #include "GetRecipesFromUser.h"
+#include "PrintMenus.h"
 
 //display recipes
 
@@ -26,10 +27,10 @@
 /////////// MAIN ///////////
 
 
-void displayAllRecipes(RECIPE arr[], int num) 
+void displayAllRecipes(RECIPE arr[], int num)
 {
 
-//RETURN IF NO RECIPES FOUND
+	//RETURN IF NO RECIPES FOUND
 	bool emp = NoRecipes(arr, num);
 	if (emp == true)
 	{
@@ -47,7 +48,7 @@ void displayAllRecipes(RECIPE arr[], int num)
 
 }
 
-void searchRecipe(RECIPE arr[], int num) 
+void searchRecipe(RECIPE arr[], int num)
 {
 	//grab user input
 	char temp[MAX] = { '\0' };
@@ -90,7 +91,7 @@ void searchRecipe(RECIPE arr[], int num)
 
 
 //manage recipes
-void addRecipe(RECIPE arr[], int num) 
+void addRecipe(RECIPE arr[], int num)
 {
 	//check if there are recipe slots available
 	bool full = FullRecpies(arr, num);
@@ -99,7 +100,7 @@ void addRecipe(RECIPE arr[], int num)
 		printf("\nAll recipe slots occupied");
 		return;
 	}
-	
+
 	//list recipe slots that can be written into
 	listEmpty(arr, num);
 
@@ -115,10 +116,10 @@ void addRecipe(RECIPE arr[], int num)
 	}
 
 
-//get recipes
+	//get recipes
 	GETALL(arr, recipe);
 
-    //CONFRIM
+	//CONFRIM
 	printf("\n\nCONFIRM DETAILS:\n");
 
 	//print
@@ -138,7 +139,7 @@ void addRecipe(RECIPE arr[], int num)
 
 }
 
-void deleteRecipe(RECIPE arr[], int num) 
+void deleteRecipe(RECIPE arr[], int num)
 {
 	//check if there are recipe slots taken yet
 	bool emp = NoRecipes(arr, num);
@@ -177,10 +178,10 @@ void deleteRecipe(RECIPE arr[], int num)
 
 }
 
-void displaySingleRecipe(RECIPE arr[], int num) 
+void displaySingleRecipe(RECIPE arr[], int num)
 {
 
-//RETURN IF NO RECIPES FOUND
+	//RETURN IF NO RECIPES FOUND
 	bool emp = NoRecipes(arr, num);
 	if (emp == true)
 	{
@@ -201,24 +202,115 @@ void displaySingleRecipe(RECIPE arr[], int num)
 		return;
 	}
 
-//print complex info
+	//print complex info
 	PRINTALL(arr, recipe);
 
 }
 
-void updateRecipe(RECIPE arr[], int num) 
+void updateRecipe(RECIPE arr[], int num)
 {
 	printf("\nupdate recipes function here\n");
 
-	//menu to pick which recipe to update
-		//if not taken reject 
-	
-	//choose what struct data to overwrite
+	displaySingleRecipe(arr, num);
+	//MENU
+	bool continueProgram = true;
+	while (continueProgram) {
 
-	//confirm
+		char choice = printUpdateMenu();
+		switch (choice)
+		{
+		case 'a': modifyCook(arr, num);
+			break;
+		case 'b':modifyIngredients(arr, num);
+			break;
+		case 'c': modifyRecipe(arr, num);
+			break;
+		case 'd':
+			continueProgram = false;
+			break;
+		default:
+			printf("\ninvalid entry\n\n\n");
+			break;
+		}
+	}
+
 }
 
-void recipeRange(RECIPE arr[], int num) 
+void modifyCook(RECIPE arr[], int num)
+{
+	bool continueProgram = true;
+	while (continueProgram) {
+
+		char choice = printUpdateHowToCookMenu();
+		switch (choice)
+		{
+		case 'a': GetPrepTime(arr, num);  //--------------------
+			break;						//						|
+		case 'b': GetCookTime(arr, num);  //----------------
+			break;//										|	|
+		case 'c': GetReadyTime(arr, num);//----------------------------> all these have issues...when we selecct from this menu it doesnt work
+			break;//										|	|
+		case 'd': GetTemprature(arr, num);//----------------
+			break;//											|
+		case 'e': GetCookMethod(arr, num);//--------------------
+			break;
+		case 'f':
+			continueProgram = false;
+			break;
+		default:
+			printf("\ninvalid entry\n\n\n");
+			break;
+		}
+	}
+}
+
+void modifyRecipe(RECIPE arr[], int num)
+{
+	bool continueProgram = true;
+	while (continueProgram) {
+
+		char choice = printUpdateRecipeMenu();
+		switch (choice)
+		{
+		case 'a': GetMealType(arr, num);
+			break;
+		case 'b': GetRecipeName(arr, num);
+			break;
+		case 'c': GetPrice(arr, num);
+			break;
+		case 'd':
+			continueProgram = false;
+			break;
+		default:
+			printf("\ninvalid entry\n\n\n");
+			break;
+		}
+	}
+}
+
+void modifyIngredients(RECIPE arr[], int num)
+{
+
+	bool continueProgram = true;
+	while (continueProgram) {
+
+		char choice = printUpdateIngredientsMenu();
+		switch (choice)
+		{
+		case 'a': GetIngredients(arr, num);
+			break;
+		case 'b':
+			continueProgram = false;
+			break;
+		default:
+			printf("\ninvalid entry\n\n\n");
+			break;
+		}
+	}
+
+}
+
+void recipeRange(RECIPE arr[], int num)
 {
 	printf("\nrecipe range function here\n");
 }

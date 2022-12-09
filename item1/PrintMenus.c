@@ -12,6 +12,7 @@
 /////////////// MAIN MENUS ///////////////
 
 #include <stdio.h>
+#include "GetRecipesFromUser.h"
 
 char printmenuMain(void)
 {
@@ -41,6 +42,71 @@ char printmenuMain(void)
 
 /////////////// SUB CHOICE MENUS ///////////////
 
+char printUpdateMenu(void)
+{
+	printf("\nTo choose a function, enter its label: \n");
+	printf("a) To edit How To Cook\n");
+	printf("b) To edit Ingredients\n");
+	printf("c) To edit Recipe\n");
+	printf("d) Quit\n");
+
+	char choice;
+	printf("\nEnter Choice: ");
+	scanf(" %c", &choice); //return to main input
+
+	return choice;
+}
 
 
 /////////////// MODIFY RECIPE MENUS ///////////////
+
+char printUpdateHowToCookMenu(void)
+{
+	printf("\nTo choose a function, enter its label: \n");
+	printf("a) Update/Change Preparation Time\n");
+	printf("b) Update/Change Cook Time\n");
+	printf("c) Update/Change Ready Time\n");
+	printf("d) Update/Change Temperature\n");
+	printf("e) Update/Change the Cooking Method\n");
+	printf("f) Quit\n");
+
+	char choice;
+	printf("\nEnter Choice: ");
+	scanf(" %c", &choice); //return to main input
+
+	return choice;
+}
+
+
+
+char printUpdateIngredientsMenu(void)
+{
+	printf("\nTo choose a function, enter its label: \n");
+	printf("a) Update/Change the  Ingredients\n");
+	printf("b) Quit\n");
+
+	char choice;
+	printf("\nEnter Choice: ");
+	scanf(" %c", &choice); //return to main input
+
+	return choice;
+}
+
+
+
+char printUpdateRecipeMenu(void)
+{
+
+
+	printf("\nTo choose a function, enter its label: \n");
+	printf("a) Update/Change the Meal Type\n");
+	printf("b) Update/Change Recipe Name\n");
+	printf("c) Update/Change Price of the Recipe\n");
+	printf("d) Quit\n");
+
+	char choice;
+	printf("\nEnter Choice: ");
+	scanf(" %c", &choice); //return to main input
+
+	return choice;
+}
